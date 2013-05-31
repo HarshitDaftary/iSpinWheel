@@ -18,13 +18,16 @@
 		745FC35F16E6E2A500F61FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745FC35E16E6E2A500F61FED /* QuartzCore.framework */; };
 		745FC36516E6EC2A00F61FED /* UIImage+x.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36116E6EC2A00F61FED /* UIImage+x.m */; };
 		745FC36616E6EC2A00F61FED /* UIView+x.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36416E6EC2A00F61FED /* UIView+x.m */; };
+		74645BB91758AE09000AABD4 /* MySpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BB81758AE08000AABD4 /* MySpinWheel.m */; };
+		74645BBC1758AE46000AABD4 /* AutoUpdateSpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */; };
+		74645BBF1758B0A3000AABD4 /* SpinWheelDisplayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */; };
 		7465956E16E9C02700592979 /* wheelSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7465956D16E9C02700592979 /* wheelSound.aif */; };
 		7465957016E9C11300592979 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7465956F16E9C11300592979 /* AudioToolbox.framework */; };
 		74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D52C191706E45900E54EB4 /* WheelInfoViewController.m */; };
 		74E20C881705468500A78A09 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E20C871705468500A78A09 /* SWViewController.m */; };
 		74FE010B16F40E8A00F2A64A /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FE010A16F40E8A00F2A64A /* LoadingView.xib */; };
 		74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FE012616F41B7200F2A64A /* MonoWheelController.m */; };
-		A658E91F16E7981800C81BBF /* SpinWheelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheelBase.m */; };
+		A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheel.m */; };
 		A6598F5D16EAD64E00AE35B9 /* NSObject+x.m in Sources */ = {isa = PBXBuildFile; fileRef = A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */; };
 		A68908231707243500972D7E /* EditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68908211707243400972D7E /* EditableTableViewController.m */; };
 		A68908241707243500972D7E /* EditableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68908221707243500972D7E /* EditableTableViewController.xib */; };
@@ -64,6 +67,12 @@
 		745FC36216E6EC2A00F61FED /* UIKit+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+x.h"; sourceTree = "<group>"; };
 		745FC36316E6EC2A00F61FED /* UIView+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+x.h"; sourceTree = "<group>"; };
 		745FC36416E6EC2A00F61FED /* UIView+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+x.m"; sourceTree = "<group>"; };
+		74645BB71758AE08000AABD4 /* MySpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpinWheel.h; sourceTree = "<group>"; };
+		74645BB81758AE08000AABD4 /* MySpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpinWheel.m; sourceTree = "<group>"; };
+		74645BBA1758AE46000AABD4 /* AutoUpdateSpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoUpdateSpinWheel.h; sourceTree = "<group>"; };
+		74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoUpdateSpinWheel.m; sourceTree = "<group>"; };
+		74645BBD1758B0A3000AABD4 /* SpinWheelDisplayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheelDisplayTimer.h; sourceTree = "<group>"; };
+		74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheelDisplayTimer.m; sourceTree = "<group>"; };
 		7465956D16E9C02700592979 /* wheelSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = wheelSound.aif; sourceTree = "<group>"; };
 		7465956F16E9C11300592979 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		74D52C181706E45900E54EB4 /* WheelInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelInfoViewController.h; sourceTree = "<group>"; };
@@ -73,8 +82,8 @@
 		74FE010A16F40E8A00F2A64A /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		74FE012516F41B7200F2A64A /* MonoWheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoWheelController.h; sourceTree = "<group>"; };
 		74FE012616F41B7200F2A64A /* MonoWheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoWheelController.m; sourceTree = "<group>"; };
-		A658E91D16E7981800C81BBF /* SpinWheelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheelBase.m; sourceTree = "<group>"; };
-		A658E91E16E7981800C81BBF /* SpinWheelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheelBase.h; sourceTree = "<group>"; };
+		A658E91D16E7981800C81BBF /* SpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheel.m; sourceTree = "<group>"; };
+		A658E91E16E7981800C81BBF /* SpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheel.h; sourceTree = "<group>"; };
 		A6598F5B16EAD64E00AE35B9 /* NSObject+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+x.h"; sourceTree = "<group>"; };
 		A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+x.m"; sourceTree = "<group>"; };
 		A68908201707243400972D7E /* EditableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewController.h; sourceTree = "<group>"; };
@@ -134,13 +143,19 @@
 		743182AB16E8309100FB799A /* Wheel */ = {
 			isa = PBXGroup;
 			children = (
-				743182A616E82CBE00FB799A /* ZNImageWheel.h */,
-				743182A716E82CBE00FB799A /* ZNImageWheel.m */,
-				A658E91E16E7981800C81BBF /* SpinWheelBase.h */,
-				A658E91D16E7981800C81BBF /* SpinWheelBase.m */,
+				74645BBD1758B0A3000AABD4 /* SpinWheelDisplayTimer.h */,
+				74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */,
 				743182AF16E83D0F00FB799A /* SWColor.h */,
 				743182B216E83F3300FB799A /* SWColorImageProductor.h */,
 				743182B316E83F3300FB799A /* SWColorImageProductor.m */,
+				A658E91E16E7981800C81BBF /* SpinWheel.h */,
+				A658E91D16E7981800C81BBF /* SpinWheel.m */,
+				74645BBA1758AE46000AABD4 /* AutoUpdateSpinWheel.h */,
+				74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */,
+				74645BB71758AE08000AABD4 /* MySpinWheel.h */,
+				74645BB81758AE08000AABD4 /* MySpinWheel.m */,
+				743182A616E82CBE00FB799A /* ZNImageWheel.h */,
+				743182A716E82CBE00FB799A /* ZNImageWheel.m */,
 			);
 			name = Wheel;
 			sourceTree = "<group>";
@@ -379,7 +394,7 @@
 				A69D7F4616E62D3D00DD1DE3 /* MainViewController.m in Sources */,
 				745FC36516E6EC2A00F61FED /* UIImage+x.m in Sources */,
 				745FC36616E6EC2A00F61FED /* UIView+x.m in Sources */,
-				A658E91F16E7981800C81BBF /* SpinWheelBase.m in Sources */,
+				A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */,
 				743182A816E82CBE00FB799A /* ZNImageWheel.m in Sources */,
 				743182AE16E830CA00FB799A /* UIColor+x.m in Sources */,
 				743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */,
@@ -389,6 +404,9 @@
 				74E20C881705468500A78A09 /* SWViewController.m in Sources */,
 				74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */,
 				A68908231707243500972D7E /* EditableTableViewController.m in Sources */,
+				74645BB91758AE09000AABD4 /* MySpinWheel.m in Sources */,
+				74645BBC1758AE46000AABD4 /* AutoUpdateSpinWheel.m in Sources */,
+				74645BBF1758B0A3000AABD4 /* SpinWheelDisplayTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

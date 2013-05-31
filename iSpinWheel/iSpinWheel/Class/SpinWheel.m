@@ -1,16 +1,14 @@
 //
-//  SpinWheelBase.m
+//  SpinWheel.m
 //  SpinWheel
 //
 //  Created by Alex Nichol on 6/24/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SpinWheelBase.h"
+#import "SpinWheel.h"
 
-@interface SpinWheelBase (Private)
-
-- (void)animationTimer:(id)sender;
+@interface SpinWheel (Private)
 
 - (void)pushTouchPoint:(CGPoint)point date:(NSDate *)date;
 - (void)clearTouchData;
@@ -20,34 +18,14 @@
 
 @end
 
-@implementation SpinWheelBase
+@implementation SpinWheel
 
 @synthesize angle;
 @synthesize angularVelocity;
 @synthesize drag;
 
-- (void)startAnimating:(id)sender {
-    if (displayTimer) return;
-    lastTimerDate = nil;
-    displayTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(animationTimer:)];
-    [displayTimer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-}
-
-- (void)stopAnimating:(id)sender {
-    if (!displayTimer) return;
-    [displayTimer invalidate];
-    displayTimer = nil;
-}
-
-- (void)animationTimer:(id)sender {
-    NSDate * newDate = [NSDate date];
-    if (!lastTimerDate || angularVelocity == 0) {
-        lastTimerDate = newDate;
-        return;
-    }
-    
-    NSTimeInterval passed = [newDate timeIntervalSinceDate:lastTimerDate];
-    
+- (void)displayUpdate:(NSTimeInterval)passed
+{
     double angleReduction = drag * passed * ABS(angularVelocity);
     if (angularVelocity < 0)
     {
@@ -85,7 +63,6 @@
     }
     
     self.angle = useAngle;
-    lastTimerDate = newDate;
     [self setNeedsDisplay];
 }
 

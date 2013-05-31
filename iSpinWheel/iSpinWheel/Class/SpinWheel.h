@@ -1,5 +1,5 @@
 //
-//  SpinWheelBase.h
+//  SpinWheel.h
 //  SpinWheel
 //
 //  Created by Alex Nichol on 6/24/12.
@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+#import "SpinWheelDisplayTimer.h"
 
-@interface SpinWheelBase : UIView {
+@interface SpinWheel : UIView<DisplayTimerDelegate>
+{
 @public
     double angle;
     double angularVelocity;
     double drag;
-    
-    NSDate * lastTimerDate;
-    CADisplayLink * displayTimer;
     
     CGPoint initialPoint;
     double initialAngle;
@@ -27,8 +25,5 @@
 @property (readwrite) double angle;
 @property (readwrite) double angularVelocity;
 @property (readwrite) double drag;
-
-- (void)startAnimating:(id)sender;
-- (void)stopAnimating:(id)sender;
 
 @end
