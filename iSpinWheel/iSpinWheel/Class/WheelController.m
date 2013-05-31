@@ -12,10 +12,6 @@
 #import <objc/runtime.h>
 #import "SWNavigationController.h"
 
-#define titleLabelTag (300)
-#define backBtnTag (400)
-#define editBtnTag (500)
-
 @interface WheelController ()
 {
     UIView* _loadingView;

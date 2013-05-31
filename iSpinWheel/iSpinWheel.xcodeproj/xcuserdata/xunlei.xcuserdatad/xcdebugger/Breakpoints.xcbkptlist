@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iSpinWheel/Class/WheelController.m"
-         timestampString = "386476723.50483"
+         timestampString = "391684797.64856"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "60"
-         endingLineNumber = "60"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
          landmarkName = "-handleTapGesture:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -1,14 +1,14 @@
 //
-//  ANSpinWheel.m
+//  SpinWheelBase.m
 //  SpinWheel
 //
 //  Created by Alex Nichol on 6/24/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SpinWheel.h"
+#import "SpinWheelBase.h"
 
-@interface SpinWheel (Private)
+@interface SpinWheelBase (Private)
 
 - (void)animationTimer:(id)sender;
 
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation SpinWheel
+@implementation SpinWheelBase
 
 @synthesize angle;
 @synthesize angularVelocity;

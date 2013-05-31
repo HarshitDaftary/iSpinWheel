@@ -1,5 +1,5 @@
 //
-//  ANSpinWheel.h
+//  SpinWheelBase.h
 //  SpinWheel
 //
 //  Created by Alex Nichol on 6/24/12.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface SpinWheel : UIView {
+@interface SpinWheelBase : UIView {
 @public
     double angle;
     double angularVelocity;

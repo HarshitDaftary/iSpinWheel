@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SpinWheel.h"
+#import "SpinWheelBase.h"
 
 
 @class ZNImageWheel;
@@ -18,7 +18,7 @@
 @end
 
 
-@interface ZNImageWheel : SpinWheel {
+@interface ZNImageWheel : SpinWheelBase {
     UIImageView * imageView;
 }
 

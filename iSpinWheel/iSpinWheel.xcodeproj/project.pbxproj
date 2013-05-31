@@ -24,7 +24,7 @@
 		74E20C881705468500A78A09 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E20C871705468500A78A09 /* SWViewController.m */; };
 		74FE010B16F40E8A00F2A64A /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FE010A16F40E8A00F2A64A /* LoadingView.xib */; };
 		74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FE012616F41B7200F2A64A /* MonoWheelController.m */; };
-		A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheel.m */; };
+		A658E91F16E7981800C81BBF /* SpinWheelBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheelBase.m */; };
 		A6598F5D16EAD64E00AE35B9 /* NSObject+x.m in Sources */ = {isa = PBXBuildFile; fileRef = A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */; };
 		A68908231707243500972D7E /* EditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68908211707243400972D7E /* EditableTableViewController.m */; };
 		A68908241707243500972D7E /* EditableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68908221707243500972D7E /* EditableTableViewController.xib */; };
@@ -73,8 +73,8 @@
 		74FE010A16F40E8A00F2A64A /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		74FE012516F41B7200F2A64A /* MonoWheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoWheelController.h; sourceTree = "<group>"; };
 		74FE012616F41B7200F2A64A /* MonoWheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoWheelController.m; sourceTree = "<group>"; };
-		A658E91D16E7981800C81BBF /* SpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheel.m; sourceTree = "<group>"; };
-		A658E91E16E7981800C81BBF /* SpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheel.h; sourceTree = "<group>"; };
+		A658E91D16E7981800C81BBF /* SpinWheelBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheelBase.m; sourceTree = "<group>"; };
+		A658E91E16E7981800C81BBF /* SpinWheelBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheelBase.h; sourceTree = "<group>"; };
 		A6598F5B16EAD64E00AE35B9 /* NSObject+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+x.h"; sourceTree = "<group>"; };
 		A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+x.m"; sourceTree = "<group>"; };
 		A68908201707243400972D7E /* EditableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewController.h; sourceTree = "<group>"; };
@@ -136,8 +136,8 @@
 			children = (
 				743182A616E82CBE00FB799A /* ZNImageWheel.h */,
 				743182A716E82CBE00FB799A /* ZNImageWheel.m */,
-				A658E91E16E7981800C81BBF /* SpinWheel.h */,
-				A658E91D16E7981800C81BBF /* SpinWheel.m */,
+				A658E91E16E7981800C81BBF /* SpinWheelBase.h */,
+				A658E91D16E7981800C81BBF /* SpinWheelBase.m */,
 				743182AF16E83D0F00FB799A /* SWColor.h */,
 				743182B216E83F3300FB799A /* SWColorImageProductor.h */,
 				743182B316E83F3300FB799A /* SWColorImageProductor.m */,
@@ -379,7 +379,7 @@
 				A69D7F4616E62D3D00DD1DE3 /* MainViewController.m in Sources */,
 				745FC36516E6EC2A00F61FED /* UIImage+x.m in Sources */,
 				745FC36616E6EC2A00F61FED /* UIView+x.m in Sources */,
-				A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */,
+				A658E91F16E7981800C81BBF /* SpinWheelBase.m in Sources */,
 				743182A816E82CBE00FB799A /* ZNImageWheel.m in Sources */,
 				743182AE16E830CA00FB799A /* UIColor+x.m in Sources */,
 				743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */,
