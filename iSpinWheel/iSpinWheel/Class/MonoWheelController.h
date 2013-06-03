@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WheelController.h"
+#import "ZNImageWheel.h"
 
-@interface MonoWheelController : WheelController
+@interface MonoWheelController : UIViewController_z<SpinWheelDelegate>
 @end

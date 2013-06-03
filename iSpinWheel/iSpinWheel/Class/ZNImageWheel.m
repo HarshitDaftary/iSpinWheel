@@ -14,9 +14,9 @@
     CGFloat _segmentAngle;
     SystemSoundID _wheelSoundId;
     NSInteger _soundPlayCount;
-    UITapGestureRecognizer *_tagGusture;
-    UIView *_editModeCoverView;
 }
+@property (nonatomic, strong)    UITapGestureRecognizer *tagGusture;
+@property (nonatomic, strong)    UIView *editModeCoverView;
 @end
 
 @implementation ZNImageWheel
@@ -28,6 +28,8 @@
 @synthesize segmentNumber=_segmentNumber;
 @synthesize isEditMode=_isEditMode;
 @synthesize delegate=_delegate;
+@synthesize tagGusture=_tagGusture;
+@synthesize editModeCoverView=_editModeCoverView;
 
 - (void)setImage:(UIImage *)anImage
 {

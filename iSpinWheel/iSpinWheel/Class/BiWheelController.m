@@ -10,13 +10,12 @@
 #import "ZNImageWheel.h"
 
 @interface BiWheelController ()
-{
-    IBOutlet ZNImageWheel *_imageWheel0;
-    IBOutlet ZNImageWheel *_imageWheel1;
 
-    IBOutlet UILabel *_label0;
-    IBOutlet UILabel *_label1;
-}
+@property (nonatomic, strong)    IBOutlet ZNImageWheel *imageWheel0;
+@property (nonatomic, strong)    IBOutlet ZNImageWheel *imageWheel1;
+
+@property (nonatomic, strong)    IBOutlet UILabel *label0;
+@property (nonatomic, strong)    IBOutlet UILabel *label1;
 
 @end
 
@@ -35,29 +34,27 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title=@"双轮";
-}
-
-- (void)loadWheelUI
-{
-    [super loadWheelUI];
+    self.titleView.title.text=@"双轮";
+    
+    [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
+    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
+    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     [_imageWheel0 initialize];
     [_imageWheel0 setColorImageWithSegmentNumber:20 segmentColorArray:nil];
-    [_imageWheel0 startAnimating:self];
     [_imageWheel0 setDrag:0.4];
     [_imageWheel0 setMaxVelocity:50];
-//    [_imageWheel0 setMaxSegmentNumber:10];
     _imageWheel0.delegate=self;
     
     [_imageWheel1 initialize];
     [_imageWheel1 setColorImageWithSegmentNumber:10 segmentColorArray:nil];
-    [_imageWheel1 startAnimating:self];
     [_imageWheel1 setDrag:0.4];
     [_imageWheel1 setMaxVelocity:50];
     _imageWheel1.delegate=self;
-
 }
+
 - (void)editButtonClick:(id)sender
 {
     if (NO==_imageWheel0.isEditMode)
@@ -90,18 +87,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    _label0 = nil;
-    _label1 = nil;
-    _imageWheel0 = nil;
-    _imageWheel1 = nil;
-    [super viewDidUnload];
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[DisplayTimer defaultDisplayTimer] addDisplayObserver:_imageWheel0];
+    [[DisplayTimer defaultDisplayTimer] addDisplayObserver:_imageWheel1];
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    _imageWheel0.delegate=nil;
-    _imageWheel1.delegate=nil;
+    [[DisplayTimer defaultDisplayTimer] removeDisplayObserver:_imageWheel0];
+    [[DisplayTimer defaultDisplayTimer] removeDisplayObserver:_imageWheel1];
     [super viewWillDisappear:animated];
 }
 @end

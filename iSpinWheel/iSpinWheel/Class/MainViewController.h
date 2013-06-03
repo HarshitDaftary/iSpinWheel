@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SWViewController.h"
 
-@interface MainViewController : SWViewController
-
+@interface MainViewController : UIViewController_z
 @end

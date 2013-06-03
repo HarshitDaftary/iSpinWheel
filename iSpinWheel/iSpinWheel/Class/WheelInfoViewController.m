@@ -32,15 +32,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title=@"我的方案";
+    self.titleView.title.text=@"我的方案";
     _tableViewController=[[EditableTableViewController alloc] init];
-    [self.view addSubview:_tableViewController.tableView];
+    [self.view insertSubview:_tableViewController.view belowSubview:self.titleView];
     
+    [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
+    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
+    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    /*
     _itemAdd=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTableViewCell:)];
     _itemAdd.tintColor=[UIColor colorWithRed:0.1 green:0.1 blue:1.0 alpha:0.1];
     
     _itemEdit=self.navigationItem.rightBarButtonItem;
     _itemEdit.tag=0;
+     */
     
 }
 
@@ -51,6 +58,7 @@
 
 - (void)editButtonClick:(id)sender
 {
+    return;
     UIBarButtonItem *item=(UIBarButtonItem*)sender;
     if (0==item.tag)
     {

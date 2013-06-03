@@ -6,10 +6,8 @@
 //  Copyright (c) 2013 Zion. All rights reserved.
 //
 
-#import "SWViewController.h"
 #import "EditableTableViewController.h"
 
-@interface WheelInfoViewController : SWViewController 
-
+@interface WheelInfoViewController : UIViewController_z
 @property (nonatomic, strong) EditableTableViewController *tableViewController;
 @end

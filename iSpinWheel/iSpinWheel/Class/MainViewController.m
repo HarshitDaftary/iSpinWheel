@@ -18,11 +18,6 @@
 
 @implementation MainViewController
 
-- (id)init
-{
-    return [self initWithNibName:@"MainViewController" bundle:nil];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,8 +31,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationController.navigationBarHidden=YES;
+//    [self.view bringSubviewToFront:self.titleView];
+//    self.titleView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"creamcolor_bk"]];
+    self.titleView.title.text=@"O(∩_∩)O";
 }
+
+- (BOOL)shouldAnimatTitleView
+{
+    return NO;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -45,17 +48,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onButtonClick:(id)sender {
+- (IBAction)onButtonClick:(id)sender
+{
     UIButton* button=(UIButton*)sender;
-    if (0==button.tag){
+    if (0==button.tag)
+    {
         [[SWNavigationController shareNavigationController] pushViewController:[[MonoWheelController alloc] init] animated:YES];
-    }else if (1==button.tag){
+    }
+    else if (1==button.tag)
+    {
         [[SWNavigationController shareNavigationController] pushViewController:[[BiWheelController alloc] init] animated:YES];
         
-    }else if (2==button.tag){
+    }
+    else if (2==button.tag)
+    {
         [[SWNavigationController shareNavigationController] pushViewController:[[TriWheelController alloc] init] animated:YES];
         
-    }else{
+    }
+    else
+    {
         NSAssert(NO, @"button tag error");
     }
 }

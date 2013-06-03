@@ -23,6 +23,7 @@
     
     MainViewController* aViewController=[[MainViewController alloc] init];
     _navigationController=[[SWNavigationController alloc] initWithRootViewController:aViewController];
+    _navigationController.navigationBarHidden=YES;
     //self.window.rootViewController=aViewController;
     self.window.rootViewController=_navigationController;
     return YES;

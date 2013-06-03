@@ -12,6 +12,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <QuartzCore/QuartzCore.h>
-    #import "UIKit+x.h"
+    #import "UIKit+z.h"
     #import "SWMacro.h"
+    #import "TitleView.h"
+    #import "UIViewController_z.h"
 #endif

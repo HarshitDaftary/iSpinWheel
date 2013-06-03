@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SpinWheelDisplayTimer.h"
+#import "DisplayTimer.h"
 
 @interface SpinWheel : UIView<DisplayTimerDelegate>
 {

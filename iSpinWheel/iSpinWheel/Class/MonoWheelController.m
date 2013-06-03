@@ -10,15 +10,18 @@
 #import "ZNImageWheel.h"
 #import "WheelInfoViewController.h"
 #import "SWNavigationController.h"
+#import "DisplayTimer.h"
 
 @interface MonoWheelController ()
-{
-    IBOutlet ZNImageWheel *_imageWheel;
-    IBOutlet UILabel *_label;
-}
+
+@property (nonatomic, strong)    IBOutlet ZNImageWheel *imageWheel;
+@property (nonatomic, strong)    IBOutlet UILabel *label;
+
 @end
 
 @implementation MonoWheelController
+@synthesize imageWheel=_imageWheel;
+@synthesize label=_label;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,24 +36,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title=@"单轮";
-    SWLog(@"bar frame=%@",NSStringFromCGRect(self.navigationController.navigationBar.frame));
+    self.titleView.title.text=@"单轮";
+    [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
+    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
+    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.imageWheel initialize];
+    [self.imageWheel setColorImageWithSegmentNumber:20 segmentColorArray:nil];
+    [self.imageWheel setDrag:0.5];
+    [self.imageWheel setMaxVelocity:50];
+    self.imageWheel.delegate=self;
     
 }
 
-- (void)loadWheelUI
-{
-    [super loadWheelUI];
-    
-    
-    [_imageWheel initialize];
-    [_imageWheel setColorImageWithSegmentNumber:20 segmentColorArray:nil];
-    [_imageWheel startAnimating:self];
-    [_imageWheel setDrag:0.5];
-    [_imageWheel setMaxVelocity:50];
-    _imageWheel.delegate=self;
-    
-}
 
 - (void)editButtonClick:(id)sender
 {
@@ -58,19 +57,19 @@
     [[SWNavigationController shareNavigationController] pushViewController:infoVC animated:YES];
     return;
     
-    if (NO==_imageWheel.isEditMode)
+    if (NO==self.imageWheel.isEditMode)
     {
-        [_imageWheel startEditAnimationWithDelay:0];
+        [self.imageWheel startEditAnimationWithDelay:0];
     }
     else
     {
-        [_imageWheel stopEditAnimation];
+        [self.imageWheel stopEditAnimation];
     }
 }
 
 - (void)didStopSpinWheel:(ZNImageWheel *)imgWheel atSegment:(NSInteger)index selectedText:(NSString *)text automatic:(BOOL)isAuto
 {
-    _label.text=text;
+    self.label.text=text;
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,16 +78,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload
+- (void)viewWillAppear:(BOOL)animated
 {
-    _label = nil;
-    _imageWheel = nil;
-    [super viewDidUnload];
+    [[DisplayTimer defaultDisplayTimer] addDisplayObserver:self.imageWheel];
+    [super viewWillAppear:animated];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    _imageWheel.delegate=nil;
+    [[DisplayTimer defaultDisplayTimer] removeDisplayObserver:self.imageWheel];
     [super viewWillDisappear:animated];
 }
 @end

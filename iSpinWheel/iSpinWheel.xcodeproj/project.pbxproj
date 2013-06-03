@@ -8,27 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		740D0C8E16F41D970027EE2B /* MonoWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740D0C8D16F41D970027EE2B /* MonoWheelController.xib */; };
-		740D621016F440EC006610C3 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740D620F16F440EC006610C3 /* TitleView.xib */; };
 		743182A816E82CBE00FB799A /* ZNImageWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182A716E82CBE00FB799A /* ZNImageWheel.m */; };
-		743182AE16E830CA00FB799A /* UIColor+x.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182AD16E830CA00FB799A /* UIColor+x.m */; };
+		743182AE16E830CA00FB799A /* UIColor+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182AD16E830CA00FB799A /* UIColor+z.m */; };
 		743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182B316E83F3300FB799A /* SWColorImageProductor.m */; };
-		7453F7FD16E9EE62003B2195 /* WheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7453F7FC16E9EE61003B2195 /* WheelController.m */; };
 		7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80016E9F267003B2195 /* BiWheelController.xib */; };
 		7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80216E9F278003B2195 /* TriWheelController.xib */; };
 		745FC35F16E6E2A500F61FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745FC35E16E6E2A500F61FED /* QuartzCore.framework */; };
-		745FC36516E6EC2A00F61FED /* UIImage+x.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36116E6EC2A00F61FED /* UIImage+x.m */; };
-		745FC36616E6EC2A00F61FED /* UIView+x.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36416E6EC2A00F61FED /* UIView+x.m */; };
-		74645BB91758AE09000AABD4 /* MySpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BB81758AE08000AABD4 /* MySpinWheel.m */; };
-		74645BBC1758AE46000AABD4 /* AutoUpdateSpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */; };
-		74645BBF1758B0A3000AABD4 /* SpinWheelDisplayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */; };
+		745FC36516E6EC2A00F61FED /* UIImage+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36116E6EC2A00F61FED /* UIImage+z.m */; };
+		745FC36616E6EC2A00F61FED /* UIView+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36416E6EC2A00F61FED /* UIView+z.m */; };
+		74645BBF1758B0A3000AABD4 /* DisplayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBE1758B0A3000AABD4 /* DisplayTimer.m */; };
 		7465956E16E9C02700592979 /* wheelSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7465956D16E9C02700592979 /* wheelSound.aif */; };
 		7465957016E9C11300592979 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7465956F16E9C11300592979 /* AudioToolbox.framework */; };
+		74C5BE6A175C76E7009B552C /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE69175C76E7009B552C /* TitleView.m */; };
+		74C5BE6C175C7703009B552C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6B175C7703009B552C /* TitleView.xib */; };
+		74C5BE6E175C9B8C009B552C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6D175C9B8C009B552C /* MainViewController.xib */; };
 		74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D52C191706E45900E54EB4 /* WheelInfoViewController.m */; };
-		74E20C881705468500A78A09 /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E20C871705468500A78A09 /* SWViewController.m */; };
-		74FE010B16F40E8A00F2A64A /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FE010A16F40E8A00F2A64A /* LoadingView.xib */; };
+		74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */; };
+		74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8F05175C50D10029C3D0 /* UIViewController_z.m */; };
+		74DE8F13175C6B7E0029C3D0 /* creamcolor_bk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */; };
+		74DE8F14175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */; };
+		74DE8F15175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0A175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png */; };
+		74DE8F16175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0B175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png */; };
+		74DE8F17175C6B7E0029C3D0 /* navi_btn_icon_back_disabled@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0C175C6B7E0029C3D0 /* navi_btn_icon_back_disabled@2x~iphone.png */; };
+		74DE8F18175C6B7E0029C3D0 /* navi_btn_icon_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0D175C6B7E0029C3D0 /* navi_btn_icon_close.png */; };
+		74DE8F19175C6B7E0029C3D0 /* navi_btn_icon_close_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0E175C6B7E0029C3D0 /* navi_btn_icon_close_disabled.png */; };
+		74DE8F1A175C6B7E0029C3D0 /* navi_btn_icon_edit@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F0F175C6B7E0029C3D0 /* navi_btn_icon_edit@2x~iphone.png */; };
+		74DE8F1B175C6B7E0029C3D0 /* navi_btn_icon_edit_disabled@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F10175C6B7E0029C3D0 /* navi_btn_icon_edit_disabled@2x~iphone.png */; };
+		74DE8F1C175C6B7E0029C3D0 /* table_cell_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F11175C6B7E0029C3D0 /* table_cell_checked@2x.png */; };
+		74DE8F1D175C6B7E0029C3D0 /* table_cell_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F12175C6B7E0029C3D0 /* table_cell_unchecked@2x.png */; };
 		74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FE012616F41B7200F2A64A /* MonoWheelController.m */; };
 		A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheel.m */; };
-		A6598F5D16EAD64E00AE35B9 /* NSObject+x.m in Sources */ = {isa = PBXBuildFile; fileRef = A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */; };
+		A6598F5D16EAD64E00AE35B9 /* NSObject+z.m in Sources */ = {isa = PBXBuildFile; fileRef = A6598F5C16EAD64E00AE35B9 /* NSObject+z.m */; };
 		A68908231707243500972D7E /* EditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68908211707243400972D7E /* EditableTableViewController.m */; };
 		A68908241707243500972D7E /* EditableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68908221707243500972D7E /* EditableTableViewController.xib */; };
 		A69D7F0616E62BEF00DD1DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69D7F0516E62BEF00DD1DE3 /* UIKit.framework */; };
@@ -44,48 +54,56 @@
 		A69D7F4316E62D3D00DD1DE3 /* SWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69D7F2E16E62D3D00DD1DE3 /* SWAppDelegate.m */; };
 		A69D7F4416E62D3D00DD1DE3 /* TriWheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69D7F3016E62D3D00DD1DE3 /* TriWheelController.m */; };
 		A69D7F4616E62D3D00DD1DE3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69D7F3316E62D3D00DD1DE3 /* MainViewController.m */; };
-		A69D7F4716E62D3D00DD1DE3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69D7F3416E62D3D00DD1DE3 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		740D0C8D16F41D970027EE2B /* MonoWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonoWheelController.xib; sourceTree = "<group>"; };
-		740D620F16F440EC006610C3 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		743182A616E82CBE00FB799A /* ZNImageWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNImageWheel.h; sourceTree = "<group>"; };
 		743182A716E82CBE00FB799A /* ZNImageWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNImageWheel.m; sourceTree = "<group>"; };
-		743182AC16E830CA00FB799A /* UIColor+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+x.h"; sourceTree = "<group>"; };
-		743182AD16E830CA00FB799A /* UIColor+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+x.m"; sourceTree = "<group>"; };
+		743182AC16E830CA00FB799A /* UIColor+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+z.h"; sourceTree = "<group>"; };
+		743182AD16E830CA00FB799A /* UIColor+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+z.m"; sourceTree = "<group>"; };
 		743182AF16E83D0F00FB799A /* SWColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWColor.h; sourceTree = "<group>"; };
 		743182B216E83F3300FB799A /* SWColorImageProductor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWColorImageProductor.h; sourceTree = "<group>"; };
 		743182B316E83F3300FB799A /* SWColorImageProductor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWColorImageProductor.m; sourceTree = "<group>"; };
-		7453F7FB16E9EE61003B2195 /* WheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelController.h; sourceTree = "<group>"; };
-		7453F7FC16E9EE61003B2195 /* WheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelController.m; sourceTree = "<group>"; };
 		7453F80016E9F267003B2195 /* BiWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiWheelController.xib; sourceTree = "<group>"; };
 		7453F80216E9F278003B2195 /* TriWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TriWheelController.xib; sourceTree = "<group>"; };
 		745FC35E16E6E2A500F61FED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		745FC36016E6EC2A00F61FED /* UIImage+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+x.h"; sourceTree = "<group>"; };
-		745FC36116E6EC2A00F61FED /* UIImage+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+x.m"; sourceTree = "<group>"; };
-		745FC36216E6EC2A00F61FED /* UIKit+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+x.h"; sourceTree = "<group>"; };
-		745FC36316E6EC2A00F61FED /* UIView+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+x.h"; sourceTree = "<group>"; };
-		745FC36416E6EC2A00F61FED /* UIView+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+x.m"; sourceTree = "<group>"; };
-		74645BB71758AE08000AABD4 /* MySpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySpinWheel.h; sourceTree = "<group>"; };
-		74645BB81758AE08000AABD4 /* MySpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySpinWheel.m; sourceTree = "<group>"; };
-		74645BBA1758AE46000AABD4 /* AutoUpdateSpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoUpdateSpinWheel.h; sourceTree = "<group>"; };
-		74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoUpdateSpinWheel.m; sourceTree = "<group>"; };
-		74645BBD1758B0A3000AABD4 /* SpinWheelDisplayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheelDisplayTimer.h; sourceTree = "<group>"; };
-		74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheelDisplayTimer.m; sourceTree = "<group>"; };
+		745FC36016E6EC2A00F61FED /* UIImage+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+z.h"; sourceTree = "<group>"; };
+		745FC36116E6EC2A00F61FED /* UIImage+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+z.m"; sourceTree = "<group>"; };
+		745FC36216E6EC2A00F61FED /* UIKit+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+z.h"; sourceTree = "<group>"; };
+		745FC36316E6EC2A00F61FED /* UIView+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+z.h"; sourceTree = "<group>"; };
+		745FC36416E6EC2A00F61FED /* UIView+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+z.m"; sourceTree = "<group>"; };
+		74645BBD1758B0A3000AABD4 /* DisplayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayTimer.h; sourceTree = "<group>"; };
+		74645BBE1758B0A3000AABD4 /* DisplayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayTimer.m; sourceTree = "<group>"; };
 		7465956D16E9C02700592979 /* wheelSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = wheelSound.aif; sourceTree = "<group>"; };
 		7465956F16E9C11300592979 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		74C5BE68175C76E7009B552C /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
+		74C5BE69175C76E7009B552C /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
+		74C5BE6B175C7703009B552C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		74C5BE6D175C9B8C009B552C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		74D52C181706E45900E54EB4 /* WheelInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelInfoViewController.h; sourceTree = "<group>"; };
 		74D52C191706E45900E54EB4 /* WheelInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelInfoViewController.m; sourceTree = "<group>"; };
-		74E20C861705468500A78A09 /* SWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWViewController.h; sourceTree = "<group>"; };
-		74E20C871705468500A78A09 /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
-		74FE010A16F40E8A00F2A64A /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		74DE8EFC175C4E730029C3D0 /* UIViewController+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+z.h"; sourceTree = "<group>"; };
+		74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+z.m"; sourceTree = "<group>"; };
+		74DE8F04175C50D10029C3D0 /* UIViewController_z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_z.h; sourceTree = "<group>"; };
+		74DE8F05175C50D10029C3D0 /* UIViewController_z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewController_z.m; sourceTree = "<group>"; };
+		74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "creamcolor_bk@2x.png"; sourceTree = "<group>"; };
+		74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_bk_down@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F0A175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_bk_normal@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F0B175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_back@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F0C175C6B7E0029C3D0 /* navi_btn_icon_back_disabled@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_back_disabled@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F0D175C6B7E0029C3D0 /* navi_btn_icon_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_btn_icon_close.png; sourceTree = "<group>"; };
+		74DE8F0E175C6B7E0029C3D0 /* navi_btn_icon_close_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_btn_icon_close_disabled.png; sourceTree = "<group>"; };
+		74DE8F0F175C6B7E0029C3D0 /* navi_btn_icon_edit@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_edit@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F10175C6B7E0029C3D0 /* navi_btn_icon_edit_disabled@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_edit_disabled@2x~iphone.png"; sourceTree = "<group>"; };
+		74DE8F11175C6B7E0029C3D0 /* table_cell_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_checked@2x.png"; sourceTree = "<group>"; };
+		74DE8F12175C6B7E0029C3D0 /* table_cell_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_unchecked@2x.png"; sourceTree = "<group>"; };
 		74FE012516F41B7200F2A64A /* MonoWheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonoWheelController.h; sourceTree = "<group>"; };
 		74FE012616F41B7200F2A64A /* MonoWheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonoWheelController.m; sourceTree = "<group>"; };
 		A658E91D16E7981800C81BBF /* SpinWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinWheel.m; sourceTree = "<group>"; };
 		A658E91E16E7981800C81BBF /* SpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheel.h; sourceTree = "<group>"; };
-		A6598F5B16EAD64E00AE35B9 /* NSObject+x.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+x.h"; sourceTree = "<group>"; };
-		A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+x.m"; sourceTree = "<group>"; };
+		A6598F5B16EAD64E00AE35B9 /* NSObject+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+z.h"; sourceTree = "<group>"; };
+		A6598F5C16EAD64E00AE35B9 /* NSObject+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+z.m"; sourceTree = "<group>"; };
 		A68908201707243400972D7E /* EditableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewController.h; sourceTree = "<group>"; };
 		A68908211707243400972D7E /* EditableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewController.m; sourceTree = "<group>"; };
 		A68908221707243500972D7E /* EditableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableTableViewController.xib; sourceTree = "<group>"; };
@@ -102,15 +120,14 @@
 		A69D7F1B16E62BEF00DD1DE3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A69D7F2316E62D3D00DD1DE3 /* BiWheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiWheelController.h; sourceTree = "<group>"; };
 		A69D7F2416E62D3D00DD1DE3 /* BiWheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiWheelController.m; sourceTree = "<group>"; };
-		A69D7F2616E62D3D00DD1DE3 /* SWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNavigationController.h; sourceTree = "<group>"; };
-		A69D7F2716E62D3D00DD1DE3 /* SWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNavigationController.m; sourceTree = "<group>"; };
+		A69D7F2616E62D3D00DD1DE3 /* SWNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNavigationController.h; path = ../../Class/SWNavigationController.h; sourceTree = "<group>"; };
+		A69D7F2716E62D3D00DD1DE3 /* SWNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNavigationController.m; path = ../../Class/SWNavigationController.m; sourceTree = "<group>"; };
 		A69D7F2D16E62D3D00DD1DE3 /* SWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAppDelegate.h; sourceTree = "<group>"; };
 		A69D7F2E16E62D3D00DD1DE3 /* SWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAppDelegate.m; sourceTree = "<group>"; };
 		A69D7F2F16E62D3D00DD1DE3 /* TriWheelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriWheelController.h; sourceTree = "<group>"; };
 		A69D7F3016E62D3D00DD1DE3 /* TriWheelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriWheelController.m; sourceTree = "<group>"; };
 		A69D7F3216E62D3D00DD1DE3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		A69D7F3316E62D3D00DD1DE3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		A69D7F3416E62D3D00DD1DE3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		A69D7F3C16E62D3D00DD1DE3 /* SWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,34 +160,57 @@
 		743182AB16E8309100FB799A /* Wheel */ = {
 			isa = PBXGroup;
 			children = (
-				74645BBD1758B0A3000AABD4 /* SpinWheelDisplayTimer.h */,
-				74645BBE1758B0A3000AABD4 /* SpinWheelDisplayTimer.m */,
+				74645BBD1758B0A3000AABD4 /* DisplayTimer.h */,
+				74645BBE1758B0A3000AABD4 /* DisplayTimer.m */,
 				743182AF16E83D0F00FB799A /* SWColor.h */,
 				743182B216E83F3300FB799A /* SWColorImageProductor.h */,
 				743182B316E83F3300FB799A /* SWColorImageProductor.m */,
 				A658E91E16E7981800C81BBF /* SpinWheel.h */,
 				A658E91D16E7981800C81BBF /* SpinWheel.m */,
-				74645BBA1758AE46000AABD4 /* AutoUpdateSpinWheel.h */,
-				74645BBB1758AE46000AABD4 /* AutoUpdateSpinWheel.m */,
-				74645BB71758AE08000AABD4 /* MySpinWheel.h */,
-				74645BB81758AE08000AABD4 /* MySpinWheel.m */,
 				743182A616E82CBE00FB799A /* ZNImageWheel.h */,
 				743182A716E82CBE00FB799A /* ZNImageWheel.m */,
 			);
 			name = Wheel;
 			sourceTree = "<group>";
 		};
+		74DE8F03175C50D10029C3D0 /* base_arch */ = {
+			isa = PBXGroup;
+			children = (
+				A69D7F2616E62D3D00DD1DE3 /* SWNavigationController.h */,
+				A69D7F2716E62D3D00DD1DE3 /* SWNavigationController.m */,
+				74DE8F04175C50D10029C3D0 /* UIViewController_z.h */,
+				74DE8F05175C50D10029C3D0 /* UIViewController_z.m */,
+				74C5BE68175C76E7009B552C /* TitleView.h */,
+				74C5BE69175C76E7009B552C /* TitleView.m */,
+				74C5BE6B175C7703009B552C /* TitleView.xib */,
+			);
+			path = base_arch;
+			sourceTree = "<group>";
+		};
+		74DE8F07175C6B7E0029C3D0 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */,
+				74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */,
+				74DE8F0A175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png */,
+				74DE8F0B175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png */,
+				74DE8F0C175C6B7E0029C3D0 /* navi_btn_icon_back_disabled@2x~iphone.png */,
+				74DE8F0D175C6B7E0029C3D0 /* navi_btn_icon_close.png */,
+				74DE8F0E175C6B7E0029C3D0 /* navi_btn_icon_close_disabled.png */,
+				74DE8F0F175C6B7E0029C3D0 /* navi_btn_icon_edit@2x~iphone.png */,
+				74DE8F10175C6B7E0029C3D0 /* navi_btn_icon_edit_disabled@2x~iphone.png */,
+				74DE8F11175C6B7E0029C3D0 /* table_cell_checked@2x.png */,
+				74DE8F12175C6B7E0029C3D0 /* table_cell_unchecked@2x.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		74E20C7E17053BE400A78A09 /* mainVC */ = {
 			isa = PBXGroup;
 			children = (
-				74E20C861705468500A78A09 /* SWViewController.h */,
-				74E20C871705468500A78A09 /* SWViewController.m */,
-				740D620F16F440EC006610C3 /* TitleView.xib */,
 				A69D7F3216E62D3D00DD1DE3 /* MainViewController.h */,
 				A69D7F3316E62D3D00DD1DE3 /* MainViewController.m */,
-				A69D7F3416E62D3D00DD1DE3 /* MainViewController.xib */,
-				A69D7F2616E62D3D00DD1DE3 /* SWNavigationController.h */,
-				A69D7F2716E62D3D00DD1DE3 /* SWNavigationController.m */,
+				74C5BE6D175C9B8C009B552C /* MainViewController.xib */,
 			);
 			name = mainVC;
 			sourceTree = "<group>";
@@ -178,9 +218,6 @@
 		74E20C7F17053C0A00A78A09 /* WheelVC */ = {
 			isa = PBXGroup;
 			children = (
-				7453F7FB16E9EE61003B2195 /* WheelController.h */,
-				7453F7FC16E9EE61003B2195 /* WheelController.m */,
-				74FE010A16F40E8A00F2A64A /* LoadingView.xib */,
 				74FE012516F41B7200F2A64A /* MonoWheelController.h */,
 				74FE012616F41B7200F2A64A /* MonoWheelController.m */,
 				740D0C8D16F41D970027EE2B /* MonoWheelController.xib */,
@@ -209,17 +246,10 @@
 		A659F2C316E78F3A0092E1BA /* res */ = {
 			isa = PBXGroup;
 			children = (
+				74DE8F07175C6B7E0029C3D0 /* image */,
 				7465956D16E9C02700592979 /* wheelSound.aif */,
-				A659F2C416E78F3A0092E1BA /* image */,
 			);
 			path = res;
-			sourceTree = "<group>";
-		};
-		A659F2C416E78F3A0092E1BA /* image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = image;
 			sourceTree = "<group>";
 		};
 		A69D7EF916E62BEF00DD1DE3 = {
@@ -290,6 +320,7 @@
 		A69D7F3516E62D3D00DD1DE3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				74DE8F03175C50D10029C3D0 /* base_arch */,
 				A69D7F3616E62D3D00DD1DE3 /* category */,
 				A69D7F3C16E62D3D00DD1DE3 /* SWMacro.h */,
 			);
@@ -299,15 +330,17 @@
 		A69D7F3616E62D3D00DD1DE3 /* category */ = {
 			isa = PBXGroup;
 			children = (
-				745FC36216E6EC2A00F61FED /* UIKit+x.h */,
-				745FC36016E6EC2A00F61FED /* UIImage+x.h */,
-				745FC36116E6EC2A00F61FED /* UIImage+x.m */,
-				745FC36316E6EC2A00F61FED /* UIView+x.h */,
-				745FC36416E6EC2A00F61FED /* UIView+x.m */,
-				743182AC16E830CA00FB799A /* UIColor+x.h */,
-				743182AD16E830CA00FB799A /* UIColor+x.m */,
-				A6598F5B16EAD64E00AE35B9 /* NSObject+x.h */,
-				A6598F5C16EAD64E00AE35B9 /* NSObject+x.m */,
+				745FC36216E6EC2A00F61FED /* UIKit+z.h */,
+				745FC36016E6EC2A00F61FED /* UIImage+z.h */,
+				745FC36116E6EC2A00F61FED /* UIImage+z.m */,
+				745FC36316E6EC2A00F61FED /* UIView+z.h */,
+				745FC36416E6EC2A00F61FED /* UIView+z.m */,
+				743182AC16E830CA00FB799A /* UIColor+z.h */,
+				743182AD16E830CA00FB799A /* UIColor+z.m */,
+				A6598F5B16EAD64E00AE35B9 /* NSObject+z.h */,
+				A6598F5C16EAD64E00AE35B9 /* NSObject+z.m */,
+				74DE8EFC175C4E730029C3D0 /* UIViewController+z.h */,
+				74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -368,14 +401,24 @@
 				A69D7F1816E62BEF00DD1DE3 /* Default.png in Resources */,
 				A69D7F1A16E62BEF00DD1DE3 /* Default@2x.png in Resources */,
 				A69D7F1C16E62BF000DD1DE3 /* Default-568h@2x.png in Resources */,
-				A69D7F4716E62D3D00DD1DE3 /* MainViewController.xib in Resources */,
 				7465956E16E9C02700592979 /* wheelSound.aif in Resources */,
 				7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */,
 				7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */,
-				74FE010B16F40E8A00F2A64A /* LoadingView.xib in Resources */,
 				740D0C8E16F41D970027EE2B /* MonoWheelController.xib in Resources */,
-				740D621016F440EC006610C3 /* TitleView.xib in Resources */,
 				A68908241707243500972D7E /* EditableTableViewController.xib in Resources */,
+				74DE8F13175C6B7E0029C3D0 /* creamcolor_bk@2x.png in Resources */,
+				74DE8F14175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png in Resources */,
+				74DE8F15175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png in Resources */,
+				74DE8F16175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png in Resources */,
+				74DE8F17175C6B7E0029C3D0 /* navi_btn_icon_back_disabled@2x~iphone.png in Resources */,
+				74DE8F18175C6B7E0029C3D0 /* navi_btn_icon_close.png in Resources */,
+				74DE8F19175C6B7E0029C3D0 /* navi_btn_icon_close_disabled.png in Resources */,
+				74DE8F1A175C6B7E0029C3D0 /* navi_btn_icon_edit@2x~iphone.png in Resources */,
+				74DE8F1B175C6B7E0029C3D0 /* navi_btn_icon_edit_disabled@2x~iphone.png in Resources */,
+				74DE8F1C175C6B7E0029C3D0 /* table_cell_checked@2x.png in Resources */,
+				74DE8F1D175C6B7E0029C3D0 /* table_cell_unchecked@2x.png in Resources */,
+				74C5BE6C175C7703009B552C /* TitleView.xib in Resources */,
+				74C5BE6E175C9B8C009B552C /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,21 +435,20 @@
 				A69D7F4316E62D3D00DD1DE3 /* SWAppDelegate.m in Sources */,
 				A69D7F4416E62D3D00DD1DE3 /* TriWheelController.m in Sources */,
 				A69D7F4616E62D3D00DD1DE3 /* MainViewController.m in Sources */,
-				745FC36516E6EC2A00F61FED /* UIImage+x.m in Sources */,
-				745FC36616E6EC2A00F61FED /* UIView+x.m in Sources */,
+				745FC36516E6EC2A00F61FED /* UIImage+z.m in Sources */,
+				745FC36616E6EC2A00F61FED /* UIView+z.m in Sources */,
 				A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */,
 				743182A816E82CBE00FB799A /* ZNImageWheel.m in Sources */,
-				743182AE16E830CA00FB799A /* UIColor+x.m in Sources */,
+				743182AE16E830CA00FB799A /* UIColor+z.m in Sources */,
 				743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */,
-				7453F7FD16E9EE62003B2195 /* WheelController.m in Sources */,
-				A6598F5D16EAD64E00AE35B9 /* NSObject+x.m in Sources */,
+				A6598F5D16EAD64E00AE35B9 /* NSObject+z.m in Sources */,
 				74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */,
-				74E20C881705468500A78A09 /* SWViewController.m in Sources */,
 				74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */,
 				A68908231707243500972D7E /* EditableTableViewController.m in Sources */,
-				74645BB91758AE09000AABD4 /* MySpinWheel.m in Sources */,
-				74645BBC1758AE46000AABD4 /* AutoUpdateSpinWheel.m in Sources */,
-				74645BBF1758B0A3000AABD4 /* SpinWheelDisplayTimer.m in Sources */,
+				74645BBF1758B0A3000AABD4 /* DisplayTimer.m in Sources */,
+				74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */,
+				74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */,
+				74C5BE6A175C76E7009B552C /* TitleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
