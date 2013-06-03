@@ -20,6 +20,10 @@
 @end
 
 @implementation BiWheelController
+@synthesize imageWheel0=_imageWheel0;
+@synthesize imageWheel1=_imageWheel1;
+@synthesize label0=_label0;
+@synthesize label1=_label1;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

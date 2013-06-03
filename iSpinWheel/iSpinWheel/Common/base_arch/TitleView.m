@@ -12,6 +12,7 @@
 @synthesize leftButton=_leftButton;
 @synthesize title=_title;
 @synthesize rightButton=_rightButton;
+@synthesize backgroundImageView=_backgroundImageView;
 
 - (id)initWithFrame:(CGRect)frame
 {

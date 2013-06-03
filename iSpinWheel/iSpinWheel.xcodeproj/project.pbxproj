@@ -539,12 +539,12 @@
 		A69D7F2016E62BF000DD1DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANGJUN HE (PZNE7A4LHQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang shaohan (CHV55RKEN9)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSpinWheel/iSpinWheel-Prefix.h";
 				INFOPLIST_FILE = "iSpinWheel/iSpinWheel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "95C01191-85A0-40CB-B72E-82B818B6C5E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5165E90E-B4A5-40D5-89E9-5C31CA3339E8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
