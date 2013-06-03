@@ -31,8 +31,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    [self.view bringSubviewToFront:self.titleView];
-//    self.titleView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"creamcolor_bk"]];
     self.titleView.title.text=@"O(∩_∩)O";
 }
 

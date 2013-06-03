@@ -22,6 +22,9 @@
 		74C5BE6A175C76E7009B552C /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE69175C76E7009B552C /* TitleView.m */; };
 		74C5BE6C175C7703009B552C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6B175C7703009B552C /* TitleView.xib */; };
 		74C5BE6E175C9B8C009B552C /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6D175C9B8C009B552C /* MainViewController.xib */; };
+		74C5BE72175CAD2B009B552C /* 1wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6F175CAD2A009B552C /* 1wheel.png */; };
+		74C5BE73175CAD2B009B552C /* 2wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE70175CAD2A009B552C /* 2wheel.png */; };
+		74C5BE74175CAD2B009B552C /* 3wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE71175CAD2B009B552C /* 3wheel.png */; };
 		74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D52C191706E45900E54EB4 /* WheelInfoViewController.m */; };
 		74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */; };
 		74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8F05175C50D10029C3D0 /* UIViewController_z.m */; };
@@ -81,6 +84,9 @@
 		74C5BE69175C76E7009B552C /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		74C5BE6B175C7703009B552C /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		74C5BE6D175C9B8C009B552C /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		74C5BE6F175CAD2A009B552C /* 1wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1wheel.png; sourceTree = "<group>"; };
+		74C5BE70175CAD2A009B552C /* 2wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2wheel.png; sourceTree = "<group>"; };
+		74C5BE71175CAD2B009B552C /* 3wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3wheel.png; sourceTree = "<group>"; };
 		74D52C181706E45900E54EB4 /* WheelInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelInfoViewController.h; sourceTree = "<group>"; };
 		74D52C191706E45900E54EB4 /* WheelInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelInfoViewController.m; sourceTree = "<group>"; };
 		74DE8EFC175C4E730029C3D0 /* UIViewController+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+z.h"; sourceTree = "<group>"; };
@@ -190,6 +196,9 @@
 		74DE8F07175C6B7E0029C3D0 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				74C5BE6F175CAD2A009B552C /* 1wheel.png */,
+				74C5BE70175CAD2A009B552C /* 2wheel.png */,
+				74C5BE71175CAD2B009B552C /* 3wheel.png */,
 				74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */,
 				74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */,
 				74DE8F0A175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png */,
@@ -419,6 +428,9 @@
 				74DE8F1D175C6B7E0029C3D0 /* table_cell_unchecked@2x.png in Resources */,
 				74C5BE6C175C7703009B552C /* TitleView.xib in Resources */,
 				74C5BE6E175C9B8C009B552C /* MainViewController.xib in Resources */,
+				74C5BE72175CAD2B009B552C /* 1wheel.png in Resources */,
+				74C5BE73175CAD2B009B552C /* 2wheel.png in Resources */,
+				74C5BE74175CAD2B009B552C /* 3wheel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,10 +539,12 @@
 		A69D7F2016E62BF000DD1DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YANGJUN HE (PZNE7A4LHQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSpinWheel/iSpinWheel-Prefix.h";
 				INFOPLIST_FILE = "iSpinWheel/iSpinWheel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "95C01191-85A0-40CB-B72E-82B818B6C5E1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

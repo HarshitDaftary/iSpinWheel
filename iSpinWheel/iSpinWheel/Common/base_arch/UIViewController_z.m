@@ -31,12 +31,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor=[UIColor whiteColor];
+//    self.view.backgroundColor=[UIColor whiteColor];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"creamcolor_bk"]];
     
     self.titleView=[TitleView titleView];
-    self.titleView.backgroundImageView.image=[UIImage resizeableImageNamed:@"creamcolor_bk"];
+//    self.titleView.backgroundColor=[UIColor colorWithString:@"210 004 90"];
+//    self.titleView.backgroundImageView.image=[UIImage resizeableImageNamed:@"creamcolor_bk"];
     [self.view addSubview:self.titleView];
-    SWLog(@"%@",self.titleView.backgroundColor);
     
     [self addTapGestureRecognizer];
 }
