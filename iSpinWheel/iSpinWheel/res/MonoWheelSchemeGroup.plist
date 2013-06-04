@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MonoScheme0</key>
+	<array>
+		<array>
+			<string>sch0whl0str0</string>
+			<string>sch0whl0str1</string>
+			<string>sch0whl0str2</string>
+		</array>
+	</array>
+	<key>MonoScheme1</key>
+	<array>
+		<array>
+			<string>sch1whl0str0</string>
+			<string>sch1whl0str1</string>
+			<string>sch1whl0str2</string>
+			<string>sch1whl0str3</string>
+		</array>
+	</array>
+	<key>MonoScheme2</key>
+	<array>
+		<array>
+			<string>sch2whl0str0</string>
+			<string>sch2whl0str1</string>
+			<string>sch2whl0str2</string>
+			<string>sch2whl0str3</string>
+			<string>sch2whl0str4</string>
+		</array>
+	</array>
+</dict>
+</plist>

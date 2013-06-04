@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BiScheme0</key>
+	<array>
+		<array>
+			<string>sch0whl0str0</string>
+			<string>sch0whl0str1</string>
+			<string>sch0wh0str2</string>
+		</array>
+		<array>
+			<string>sch0wh1str0</string>
+			<string>sch0wh1str1</string>
+			<string>sch1wh1str2</string>
+		</array>
+	</array>
+	<key>BiScheme1</key>
+	<array>
+		<array>
+			<string>sch1whl0str0</string>
+			<string>sch1wh0str1</string>
+			<string>sch1wh0str2</string>
+		</array>
+		<array>
+			<string>sch1wh1str0</string>
+			<string>sch2wh1str1</string>
+			<string>sch2wh1str2</string>
+		</array>
+	</array>
+</dict>
+</plist>

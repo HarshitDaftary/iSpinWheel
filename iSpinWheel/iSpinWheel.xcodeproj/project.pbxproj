@@ -11,6 +11,19 @@
 		743182A816E82CBE00FB799A /* ZNImageWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182A716E82CBE00FB799A /* ZNImageWheel.m */; };
 		743182AE16E830CA00FB799A /* UIColor+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182AD16E830CA00FB799A /* UIColor+z.m */; };
 		743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */ = {isa = PBXBuildFile; fileRef = 743182B316E83F3300FB799A /* SWColorImageProductor.m */; };
+		74325B4A175D9717003E9561 /* table_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B49175D9717003E9561 /* table_arrow.png */; };
+		74325B53175DB660003E9561 /* table_cell_bk_alone_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B4B175DB660003E9561 /* table_cell_bk_alone_sel@2x.png */; };
+		74325B54175DB660003E9561 /* table_cell_bk_alone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B4C175DB660003E9561 /* table_cell_bk_alone@2x.png */; };
+		74325B55175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B4D175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png */; };
+		74325B56175DB660003E9561 /* table_cell_bk_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B4E175DB660003E9561 /* table_cell_bk_bottom@2x.png */; };
+		74325B57175DB660003E9561 /* table_cell_bk_center_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B4F175DB660003E9561 /* table_cell_bk_center_sel@2x.png */; };
+		74325B58175DB660003E9561 /* table_cell_bk_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B50175DB660003E9561 /* table_cell_bk_center@2x.png */; };
+		74325B59175DB660003E9561 /* table_cell_bk_top_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B51175DB660003E9561 /* table_cell_bk_top_sel@2x.png */; };
+		74325B5A175DB660003E9561 /* table_cell_bk_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B52175DB660003E9561 /* table_cell_bk_top@2x.png */; };
+		74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */; };
+		74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */; };
+		74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */; };
+		74325B64175DF539003E9561 /* WheelSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B63175DF537003E9561 /* WheelSchemeManager.m */; };
 		7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80016E9F267003B2195 /* BiWheelController.xib */; };
 		7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80216E9F278003B2195 /* TriWheelController.xib */; };
 		745FC35F16E6E2A500F61FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745FC35E16E6E2A500F61FED /* QuartzCore.framework */; };
@@ -25,7 +38,16 @@
 		74C5BE72175CAD2B009B552C /* 1wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6F175CAD2A009B552C /* 1wheel.png */; };
 		74C5BE73175CAD2B009B552C /* 2wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE70175CAD2A009B552C /* 2wheel.png */; };
 		74C5BE74175CAD2B009B552C /* 3wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE71175CAD2B009B552C /* 3wheel.png */; };
-		74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74D52C191706E45900E54EB4 /* WheelInfoViewController.m */; };
+		74C5BE76175D80AE009B552C /* gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE75175D80AE009B552C /* gray@2x.png */; };
+		74C5BE7A175D8168009B552C /* lightyellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE77175D8168009B552C /* lightyellow@2x.png */; };
+		74C5BE7B175D8168009B552C /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE78175D8168009B552C /* green@2x.png */; };
+		74C5BE7C175D8168009B552C /* darkyellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE79175D8168009B552C /* darkyellow@2x.png */; };
+		74C5BE80175D8B83009B552C /* SchemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */; };
+		74C5BE81175D8B83009B552C /* SchemeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */; };
+		74C5BE85175D8C72009B552C /* WheelMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */; };
+		74C5BE86175D8C72009B552C /* WheelMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */; };
+		74C5BE89175D8CC7009B552C /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE88175D8CC7009B552C /* SWTableViewCell.m */; };
+		74C5BE8B175D8CDD009B552C /* SWTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */; };
 		74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */; };
 		74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8F05175C50D10029C3D0 /* UIViewController_z.m */; };
 		74DE8F13175C6B7E0029C3D0 /* creamcolor_bk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */; };
@@ -42,8 +64,6 @@
 		74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74FE012616F41B7200F2A64A /* MonoWheelController.m */; };
 		A658E91F16E7981800C81BBF /* SpinWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = A658E91D16E7981800C81BBF /* SpinWheel.m */; };
 		A6598F5D16EAD64E00AE35B9 /* NSObject+z.m in Sources */ = {isa = PBXBuildFile; fileRef = A6598F5C16EAD64E00AE35B9 /* NSObject+z.m */; };
-		A68908231707243500972D7E /* EditableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A68908211707243400972D7E /* EditableTableViewController.m */; };
-		A68908241707243500972D7E /* EditableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A68908221707243500972D7E /* EditableTableViewController.xib */; };
 		A69D7F0616E62BEF00DD1DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69D7F0516E62BEF00DD1DE3 /* UIKit.framework */; };
 		A69D7F0816E62BEF00DD1DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69D7F0716E62BEF00DD1DE3 /* Foundation.framework */; };
 		A69D7F0A16E62BEF00DD1DE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69D7F0916E62BEF00DD1DE3 /* CoreGraphics.framework */; };
@@ -68,6 +88,20 @@
 		743182AF16E83D0F00FB799A /* SWColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWColor.h; sourceTree = "<group>"; };
 		743182B216E83F3300FB799A /* SWColorImageProductor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWColorImageProductor.h; sourceTree = "<group>"; };
 		743182B316E83F3300FB799A /* SWColorImageProductor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWColorImageProductor.m; sourceTree = "<group>"; };
+		74325B49175D9717003E9561 /* table_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = table_arrow.png; sourceTree = "<group>"; };
+		74325B4B175DB660003E9561 /* table_cell_bk_alone_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_alone_sel@2x.png"; sourceTree = "<group>"; };
+		74325B4C175DB660003E9561 /* table_cell_bk_alone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_alone@2x.png"; sourceTree = "<group>"; };
+		74325B4D175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_bottom_sel@2x.png"; sourceTree = "<group>"; };
+		74325B4E175DB660003E9561 /* table_cell_bk_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_bottom@2x.png"; sourceTree = "<group>"; };
+		74325B4F175DB660003E9561 /* table_cell_bk_center_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_center_sel@2x.png"; sourceTree = "<group>"; };
+		74325B50175DB660003E9561 /* table_cell_bk_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_center@2x.png"; sourceTree = "<group>"; };
+		74325B51175DB660003E9561 /* table_cell_bk_top_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_top_sel@2x.png"; sourceTree = "<group>"; };
+		74325B52175DB660003E9561 /* table_cell_bk_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_top@2x.png"; sourceTree = "<group>"; };
+		74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MonoWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BiWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325B62175DF536003E9561 /* WheelSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelSchemeManager.h; sourceTree = "<group>"; };
+		74325B63175DF537003E9561 /* WheelSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelSchemeManager.m; sourceTree = "<group>"; };
 		7453F80016E9F267003B2195 /* BiWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiWheelController.xib; sourceTree = "<group>"; };
 		7453F80216E9F278003B2195 /* TriWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TriWheelController.xib; sourceTree = "<group>"; };
 		745FC35E16E6E2A500F61FED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -87,8 +121,19 @@
 		74C5BE6F175CAD2A009B552C /* 1wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1wheel.png; sourceTree = "<group>"; };
 		74C5BE70175CAD2A009B552C /* 2wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2wheel.png; sourceTree = "<group>"; };
 		74C5BE71175CAD2B009B552C /* 3wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3wheel.png; sourceTree = "<group>"; };
-		74D52C181706E45900E54EB4 /* WheelInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelInfoViewController.h; sourceTree = "<group>"; };
-		74D52C191706E45900E54EB4 /* WheelInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelInfoViewController.m; sourceTree = "<group>"; };
+		74C5BE75175D80AE009B552C /* gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray@2x.png"; sourceTree = "<group>"; };
+		74C5BE77175D8168009B552C /* lightyellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lightyellow@2x.png"; sourceTree = "<group>"; };
+		74C5BE78175D8168009B552C /* green@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green@2x.png"; sourceTree = "<group>"; };
+		74C5BE79175D8168009B552C /* darkyellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkyellow@2x.png"; sourceTree = "<group>"; };
+		74C5BE7D175D8B83009B552C /* SchemeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeTableViewController.h; sourceTree = "<group>"; };
+		74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeTableViewController.m; sourceTree = "<group>"; };
+		74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeTableViewController.xib; sourceTree = "<group>"; };
+		74C5BE82175D8C72009B552C /* WheelMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelMenuTableViewController.h; sourceTree = "<group>"; };
+		74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelMenuTableViewController.m; sourceTree = "<group>"; };
+		74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WheelMenuTableViewController.xib; sourceTree = "<group>"; };
+		74C5BE87175D8CC7009B552C /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		74C5BE88175D8CC7009B552C /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWTableViewCell.xib; sourceTree = "<group>"; };
 		74DE8EFC175C4E730029C3D0 /* UIViewController+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+z.h"; sourceTree = "<group>"; };
 		74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+z.m"; sourceTree = "<group>"; };
 		74DE8F04175C50D10029C3D0 /* UIViewController_z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_z.h; sourceTree = "<group>"; };
@@ -110,9 +155,6 @@
 		A658E91E16E7981800C81BBF /* SpinWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinWheel.h; sourceTree = "<group>"; };
 		A6598F5B16EAD64E00AE35B9 /* NSObject+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+z.h"; sourceTree = "<group>"; };
 		A6598F5C16EAD64E00AE35B9 /* NSObject+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+z.m"; sourceTree = "<group>"; };
-		A68908201707243400972D7E /* EditableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditableTableViewController.h; sourceTree = "<group>"; };
-		A68908211707243400972D7E /* EditableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditableTableViewController.m; sourceTree = "<group>"; };
-		A68908221707243500972D7E /* EditableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditableTableViewController.xib; sourceTree = "<group>"; };
 		A69D7F0216E62BEF00DD1DE3 /* iSpinWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpinWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69D7F0516E62BEF00DD1DE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A69D7F0716E62BEF00DD1DE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -196,6 +238,19 @@
 		74DE8F07175C6B7E0029C3D0 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				74325B4B175DB660003E9561 /* table_cell_bk_alone_sel@2x.png */,
+				74325B4C175DB660003E9561 /* table_cell_bk_alone@2x.png */,
+				74325B4D175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png */,
+				74325B4E175DB660003E9561 /* table_cell_bk_bottom@2x.png */,
+				74325B4F175DB660003E9561 /* table_cell_bk_center_sel@2x.png */,
+				74325B50175DB660003E9561 /* table_cell_bk_center@2x.png */,
+				74325B51175DB660003E9561 /* table_cell_bk_top_sel@2x.png */,
+				74325B52175DB660003E9561 /* table_cell_bk_top@2x.png */,
+				74325B49175D9717003E9561 /* table_arrow.png */,
+				74C5BE77175D8168009B552C /* lightyellow@2x.png */,
+				74C5BE78175D8168009B552C /* green@2x.png */,
+				74C5BE79175D8168009B552C /* darkyellow@2x.png */,
+				74C5BE75175D80AE009B552C /* gray@2x.png */,
 				74C5BE6F175CAD2A009B552C /* 1wheel.png */,
 				74C5BE70175CAD2A009B552C /* 2wheel.png */,
 				74C5BE71175CAD2B009B552C /* 3wheel.png */,
@@ -243,11 +298,17 @@
 		74E20C8017053C2200A78A09 /* tableVC */ = {
 			isa = PBXGroup;
 			children = (
-				A68908201707243400972D7E /* EditableTableViewController.h */,
-				A68908211707243400972D7E /* EditableTableViewController.m */,
-				A68908221707243500972D7E /* EditableTableViewController.xib */,
-				74D52C181706E45900E54EB4 /* WheelInfoViewController.h */,
-				74D52C191706E45900E54EB4 /* WheelInfoViewController.m */,
+				74325B62175DF536003E9561 /* WheelSchemeManager.h */,
+				74325B63175DF537003E9561 /* WheelSchemeManager.m */,
+				74C5BE87175D8CC7009B552C /* SWTableViewCell.h */,
+				74C5BE88175D8CC7009B552C /* SWTableViewCell.m */,
+				74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */,
+				74C5BE7D175D8B83009B552C /* SchemeTableViewController.h */,
+				74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */,
+				74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */,
+				74C5BE82175D8C72009B552C /* WheelMenuTableViewController.h */,
+				74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */,
+				74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */,
 			);
 			name = tableVC;
 			sourceTree = "<group>";
@@ -257,6 +318,9 @@
 			children = (
 				74DE8F07175C6B7E0029C3D0 /* image */,
 				7465956D16E9C02700592979 /* wheelSound.aif */,
+				74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */,
+				74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */,
+				74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -414,7 +478,6 @@
 				7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */,
 				7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */,
 				740D0C8E16F41D970027EE2B /* MonoWheelController.xib in Resources */,
-				A68908241707243500972D7E /* EditableTableViewController.xib in Resources */,
 				74DE8F13175C6B7E0029C3D0 /* creamcolor_bk@2x.png in Resources */,
 				74DE8F14175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png in Resources */,
 				74DE8F15175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png in Resources */,
@@ -431,6 +494,25 @@
 				74C5BE72175CAD2B009B552C /* 1wheel.png in Resources */,
 				74C5BE73175CAD2B009B552C /* 2wheel.png in Resources */,
 				74C5BE74175CAD2B009B552C /* 3wheel.png in Resources */,
+				74C5BE76175D80AE009B552C /* gray@2x.png in Resources */,
+				74C5BE7A175D8168009B552C /* lightyellow@2x.png in Resources */,
+				74C5BE7B175D8168009B552C /* green@2x.png in Resources */,
+				74C5BE7C175D8168009B552C /* darkyellow@2x.png in Resources */,
+				74C5BE81175D8B83009B552C /* SchemeTableViewController.xib in Resources */,
+				74C5BE86175D8C72009B552C /* WheelMenuTableViewController.xib in Resources */,
+				74C5BE8B175D8CDD009B552C /* SWTableViewCell.xib in Resources */,
+				74325B4A175D9717003E9561 /* table_arrow.png in Resources */,
+				74325B53175DB660003E9561 /* table_cell_bk_alone_sel@2x.png in Resources */,
+				74325B54175DB660003E9561 /* table_cell_bk_alone@2x.png in Resources */,
+				74325B55175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png in Resources */,
+				74325B56175DB660003E9561 /* table_cell_bk_bottom@2x.png in Resources */,
+				74325B57175DB660003E9561 /* table_cell_bk_center_sel@2x.png in Resources */,
+				74325B58175DB660003E9561 /* table_cell_bk_center@2x.png in Resources */,
+				74325B59175DB660003E9561 /* table_cell_bk_top_sel@2x.png in Resources */,
+				74325B5A175DB660003E9561 /* table_cell_bk_top@2x.png in Resources */,
+				74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */,
+				74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */,
+				74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,12 +537,14 @@
 				743182B416E83F3300FB799A /* SWColorImageProductor.m in Sources */,
 				A6598F5D16EAD64E00AE35B9 /* NSObject+z.m in Sources */,
 				74FE012816F41B7300F2A64A /* MonoWheelController.m in Sources */,
-				74D52C1A1706E45900E54EB4 /* WheelInfoViewController.m in Sources */,
-				A68908231707243500972D7E /* EditableTableViewController.m in Sources */,
 				74645BBF1758B0A3000AABD4 /* DisplayTimer.m in Sources */,
 				74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */,
 				74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */,
 				74C5BE6A175C76E7009B552C /* TitleView.m in Sources */,
+				74C5BE80175D8B83009B552C /* SchemeTableViewController.m in Sources */,
+				74C5BE85175D8C72009B552C /* WheelMenuTableViewController.m in Sources */,
+				74C5BE89175D8CC7009B552C /* SWTableViewCell.m in Sources */,
+				74325B64175DF539003E9561 /* WheelSchemeManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

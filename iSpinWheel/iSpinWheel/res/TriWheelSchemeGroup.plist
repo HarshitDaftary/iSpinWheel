@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TriScheme0</key>
+	<array>
+		<array>
+			<string>sch0whl0str0</string>
+			<string>sch0whl0str1</string>
+			<string>sch0whl0str2</string>
+		</array>
+		<array>
+			<string>sch0whl1str0</string>
+			<string>sch0whl1str1</string>
+			<string>sch0whl1str2</string>
+		</array>
+		<array>
+			<string>sch0whl2str0</string>
+			<string>sch0whl2str1</string>
+			<string>sch0whl2str2</string>
+		</array>
+	</array>
+	<key>TriScheme1</key>
+	<array>
+		<array>
+			<string>sch1whl0str0</string>
+			<string>sch1whl0str1</string>
+			<string>sch1whl0str2</string>
+		</array>
+		<array>
+			<string>sch1whl1str0</string>
+			<string>sch1whl1str1</string>
+			<string>sch1whl1str2</string>
+		</array>
+		<array>
+			<string>sch1whl2str0</string>
+			<string>sch1whl2str1</string>
+			<string>sch1whl2str2</string>
+		</array>
+	</array>
+	<key>TriScheme2</key>
+	<array>
+		<array>
+			<string>sch2whl0str0</string>
+			<string>sch2whl0str1</string>
+			<string>sch2whl0str2</string>
+		</array>
+		<array>
+			<string>sch2whl1str0</string>
+			<string>sch2whl1str1</string>
+			<string>sch2whl1str2</string>
+		</array>
+		<array>
+			<string>sch2whl2str0</string>
+			<string>sch2whl2str1</string>
+			<string>sch2whl2str2</string>
+		</array>
+	</array>
+</dict>
+</plist>

@@ -31,13 +31,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    self.view.backgroundColor=[UIColor whiteColor];
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"creamcolor_bk"]];
+    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"lightyellow"]];
     
     self.titleView=[TitleView titleView];
-//    self.titleView.backgroundColor=[UIColor colorWithString:@"210 004 90"];
-//    self.titleView.backgroundImageView.image=[UIImage resizeableImageNamed:@"creamcolor_bk"];
+    self.titleView.backgroundImageView.image=[UIImage resizeableImageNamed:@"creamcolor_bk"];
     [self.view addSubview:self.titleView];
+//    [self.view bringSubviewToFront:self.titleView];
     
     [self addTapGestureRecognizer];
 }
@@ -94,18 +93,30 @@
 - (void)hideTitleViewWithAnimation:(BOOL)animate
 {
     UIView *animateView=self.titleView;
+    void (^preAction)(void)=^(void)
+    {
+        
+    };
+    void (^animatingAction)(void)=^(void)
+    {
+        animateView.frame=CGRectMake(0, -44, 320, 44);
+        animateView.alpha=0.0f;
+        
+    };
+    void (^finishAction)(BOOL)=^(BOOL finished)
+    {
+        animateView.hidden=YES;
+    };
+    
+    preAction();
     if (animate)
     {
-        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            animateView.frame=CGRectMake(0, -44, 320, 44);
-            animateView.alpha=0.0f;
-        }completion:^(BOOL finished){
-            animateView.hidden=YES;
-        }];
+        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:animatingAction completion:finishAction];
     }
     else
     {
-        animateView.hidden=YES;
+        animatingAction();
+        finishAction(YES);
     }
 }
 
@@ -113,23 +124,32 @@
 {
 
     UIView *animateView=self.titleView;
-    if (animate)
+    
+    void (^preAction)(void)=^(void)
     {
-        
         animateView.hidden=NO;
         animateView.alpha=0.0f;
-        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            animateView.frame=CGRectMake(0, 0, 320, 44);
-            animateView.alpha=1.0f;
-        }completion:^(BOOL finished){
-        }];
+    };
+    void (^animatingAction)(void)=^(void)
+    {
+        animateView.frame=CGRectMake(0, 0, 320, 44);
+        animateView.alpha=1.0f;
+        
+    };
+    void (^finishAction)(BOOL)=^(BOOL finished)
+    {
+    };
+    
+    preAction();
+    if (animate)
+    {
+
+        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:animatingAction completion:finishAction];
     }
     else
     {
-        animateView.frame=CGRectMake(0, 0, 320, 44);
-        animateView.hidden=NO;
-        animateView.alpha=1.0f;
-        
+        animatingAction();
+        finishAction(YES);
     }
 }
 

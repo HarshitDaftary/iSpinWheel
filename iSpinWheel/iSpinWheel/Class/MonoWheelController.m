@@ -8,7 +8,7 @@
 
 #import "MonoWheelController.h"
 #import "ZNImageWheel.h"
-#import "WheelInfoViewController.h"
+#import "SchemeTableViewController.h"
 #import "SWNavigationController.h"
 #import "DisplayTimer.h"
 
@@ -53,8 +53,8 @@
 
 - (void)editButtonClick:(id)sender
 {
-    WheelInfoViewController *infoVC=[[WheelInfoViewController alloc] init];
-    [[SWNavigationController shareNavigationController] pushViewController:infoVC animated:YES];
+    SchemeTableViewController *schemeVC=[[SchemeTableViewController alloc] init];
+    [[SWNavigationController shareNavigationController] pushViewController:schemeVC animated:YES];
     return;
     
     if (NO==self.imageWheel.isEditMode)
