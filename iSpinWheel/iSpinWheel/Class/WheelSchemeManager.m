@@ -8,6 +8,9 @@
 
 #import "WheelSchemeManager.h"
 
+static WheelSchemeManager* monoSchemeManager;
+static WheelSchemeManager* biSchemeManager;
+static WheelSchemeManager* triSchemeManager;
 
 @interface WheelSchemeManager ()
 {
@@ -15,6 +18,7 @@
 }
 
 @property (strong, nonatomic) NSMutableDictionary *schemeDictionary;
+@property (strong, nonatomic) NSMutableArray *schemeNameList;
 @end
 
 @implementation WheelSchemeManager
@@ -32,10 +36,47 @@
     return self;
 }
 
-- (void)schemeAdded
++ (WheelSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type
 {
+    switch (type)
+    {
+        case SchemeGroupType_MonoWheel:
+            if (nil==monoSchemeManager)
+            {
+                monoSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_MonoWheel];
+            }
+            return monoSchemeManager;
+            break;
+        case SchemeGroupType_BiWheel:
+            if (nil==biSchemeManager)
+            {
+                biSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_BiWheel];
+            }
+            return biSchemeManager;
+            break;
+        case SchemeGroupType_TriWheel:
+            if (nil==triSchemeManager)
+            {
+                triSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_TriWheel];
+            }
+            return triSchemeManager;
+            break;
+            
+        default:
+            break;
+    }
+    return nil;
+}
+
+- (BOOL)schemeAdded:(NSString *)schemeName
+{
+    if (nil!=[self.schemeDictionary objectForKey:schemeName])
+    {
+        return NO;
+    }
     NSArray *wheelArray;
-    switch (_schemeGroupType) {
+    switch (_schemeGroupType)
+    {
         case SchemeGroupType_MonoWheel:
             wheelArray=[NSArray arrayWithObjects:
                         [[NSMutableArray alloc] initWithCapacity:3],
@@ -57,33 +98,57 @@
         default:
             break;
     }
-    
-    
-}
-
-- (void)schemeDeleted:(NSString*)schemeName
-{
+    [self.schemeDictionary setObject:wheelArray forKey:schemeName];
+    [self loadSchemeNameList];
+    return YES;
     
 }
 
-- (void)schemeRenameFrom:(NSString*)schemeName to:(NSString*)newName
+- (BOOL)schemeDeleted:(NSString*)schemeName
 {
+    if (nil==[self.schemeDictionary objectForKey:schemeName])
+    {
+        return NO;
+    }
+    [self.schemeDictionary removeObjectForKey:schemeName];
+    [self loadSchemeNameList];
+    return YES;
     
 }
 
-- (void)wheelStringAddedForWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
+- (BOOL)schemeRenameFrom:(NSString*)schemeName to:(NSString*)newName
 {
+    id obj=[self.schemeDictionary objectForKey:schemeName];
+    
+    if (nil==obj)
+    {
+        return NO;
+    }
+    [self.schemeDictionary setObject:obj forKey:newName];
+    [self.schemeDictionary removeObjectForKey:schemeName];
+    [self loadSchemeNameList];
+    return YES;
+
+}
+
+- (BOOL)wheelStringAdded:(NSString *)newStr forWheel:(NSInteger)wheelIndex ofScheme:(NSString *)schemeName
+{
+    [[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex] addObject:newStr];
+    return YES;
     
 }
 
-- (void)wheelStringRenameTo:(NSString*)newName atIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
+- (BOOL)wheelStringRenameTo:(NSString*)newName atIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
 {
+    [[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex] setObject:newName atIndex:strIndex];
+    return YES;
     
 }
 
-- (void)wheelStringDeletedAtIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
+- (BOOL)wheelStringDeletedAtIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
 {
-    
+    [[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex] removeObjectAtIndex:strIndex];
+    return YES;
 }
 
 - (void)abandonChanging
@@ -98,14 +163,12 @@
 
 - (NSArray*)schemeNameList
 {
-    NSEnumerator *enumerator=[self.schemeDictionary keyEnumerator];
-    NSMutableArray *nameList=[[NSMutableArray alloc] initWithCapacity:3];
-    id key;
-    while (key=[enumerator nextObject])
+    if (nil==_schemeNameList)
     {
-        [nameList addObject:(NSString*)key];
+        [self loadSchemeNameList];
     }
-    return nameList;
+    return _schemeNameList;
+
 }
 
 - (NSArray*)wheelArrayOfScheme:(NSString*)schemeName
@@ -119,6 +182,18 @@
 }
 
 #pragma mark - private -
+- (void)loadSchemeNameList
+{
+    NSEnumerator *enumerator=[self.schemeDictionary keyEnumerator];
+    NSMutableArray *nameList=[[NSMutableArray alloc] initWithCapacity:3];
+    id key;
+    while (key=[enumerator nextObject])
+    {
+        [nameList addObject:(NSString*)key];
+    }
+    self.schemeNameList=nameList;
+}
+
 - (void)loadSchemeFromPlistFileOfType:(SchemeGroupType)type
 {
     NSDictionary *tempSchemeDic=[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[self schemeGroupNameOfType:type] ofType:@"plist"]];
@@ -156,6 +231,8 @@
          [self.schemeDictionary setObject:wheelArray forKey:(NSString*)key];
          
      }];
+    
+    [self loadSchemeNameList];
 }
 
 - (void)loadSchemeOfType:(SchemeGroupType)type
@@ -164,6 +241,7 @@
     if (nil!=tempSchemeDic)
     {
         self.schemeDictionary=[tempSchemeDic mutableCopy];
+        [self loadSchemeNameList];
         return;
     }
     [self loadSchemeFromPlistFileOfType:type];

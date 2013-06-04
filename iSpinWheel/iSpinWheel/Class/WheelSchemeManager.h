@@ -20,17 +20,19 @@ typedef enum
 
 - (id)initWithSchemeType:(SchemeGroupType)type;
 
-- (void)schemeAdded;
++ (WheelSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type;
 
-- (void)schemeDeleted:(NSString*)schemeName;
+- (BOOL)schemeAdded:(NSString*)schemeName;
 
-- (void)schemeRenameFrom:(NSString*)schemeName to:(NSString*)newName;
+- (BOOL)schemeDeleted:(NSString*)schemeName;
 
-- (void)wheelStringAddedForWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
+- (BOOL)schemeRenameFrom:(NSString*)schemeName to:(NSString*)newName;
 
-- (void)wheelStringRenameTo:(NSString*)newName atIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
+- (BOOL)wheelStringAdded:(NSString*)newStr forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
 
-- (void)wheelStringDeletedAtIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
+- (BOOL)wheelStringRenameTo:(NSString*)newName atIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
+
+- (BOOL)wheelStringDeletedAtIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName;
 
 - (void)abandonChanging;
 

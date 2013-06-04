@@ -9,7 +9,7 @@
 #import "UIViewController_z.h"
 #import "SWTableViewCell.h"
 
-@interface SchemeTableViewController : UIViewController_z<UITableViewDataSource,UITableViewDelegate,SWTableViewCellDelegate>
+@interface SchemeTableViewController : UIViewController_z<UITableViewDataSource,UITableViewDelegate,SWTableViewCellEditDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

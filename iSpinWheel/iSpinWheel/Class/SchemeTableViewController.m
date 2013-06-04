@@ -8,21 +8,26 @@
 
 #import "SchemeTableViewController.h"
 #import "SWTableViewCell.h"
+#import "WheelSchemeManager.h"
 
 @interface SchemeTableViewController ()
 {
     CGPoint _contentOffset;
 }
 
+@property (nonatomic, assign) WheelSchemeManager *schemeManager;
+
 @end
 
 @implementation SchemeTableViewController
 @synthesize tableView=_tableView;
+@synthesize schemeManager=_schemeManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -40,6 +45,8 @@
     
     [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
     [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.schemeManager=[WheelSchemeManager shareInstanceOfSchemeType:SchemeGroupType_MonoWheel];
     
 }
 
@@ -65,7 +72,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [[self.schemeManager schemeNameList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,7 +82,7 @@
     if (nil==swcell)
     {
         swcell = (SWTableViewCell*)[UIView viewWithNib:@"SWTableViewCell" owner:nil];
-        swcell.swdelegate=self;
+        swcell.editDelegate=self;
     }
     
     NSInteger row=indexPath.row;
@@ -101,7 +108,7 @@
         }
     }
     swcell.indexPath=indexPath;
-    [swcell configureCellWithText:[NSString stringWithFormat:@"--%d--",row] placeType:type];
+    [swcell configureCellWithText:[[self.schemeManager schemeNameList] objectAtIndex:row] placeType:type];
     
     return swcell;
 }
@@ -215,19 +222,12 @@
 #pragma mark - SWTableViewCellDelegate -
 - (void)swtableviewcellDidBeginEditing:(SWTableViewCell *)cell
 {
-    NSIndexPath *selectedPath=[self.tableView indexPathForSelectedRow];
-    if (cell.indexPath.row==selectedPath.row&&cell.indexPath.section==selectedPath.section)
-    {
-        return;
-    }
-    [self.tableView deselectRowAtIndexPath:selectedPath animated:NO];
-    [self.tableView selectRowAtIndexPath:cell.indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
-    
+    SWLog(@"");
 }
 
 - (void)swtableviewcellDidEndEditing:(SWTableViewCell *)cell
 {
-    
+    SWLog(@"");
 }
 
 

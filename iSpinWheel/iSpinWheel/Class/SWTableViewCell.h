@@ -20,7 +20,7 @@ typedef enum
 }CellPlaceType;
 
 @class SWTableViewCell;
-@protocol SWTableViewCellDelegate <NSObject>
+@protocol SWTableViewCellEditDelegate <NSObject>
 
 @required
 - (void)swtableviewcellDidBeginEditing:(SWTableViewCell*)cell;
@@ -35,7 +35,7 @@ typedef enum
 @property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (strong, nonatomic) IBOutlet UIView *coverView;
 @property (strong, nonatomic) NSIndexPath *indexPath;
-@property (assign, nonatomic) id<SWTableViewCellDelegate> swdelegate;
+@property (assign, nonatomic) id<SWTableViewCellEditDelegate> editDelegate;
 
 - (void)configureCellWithText:(NSString*)text placeType:(CellPlaceType)type;
 

@@ -20,7 +20,7 @@
 @synthesize textField=_textField;
 @synthesize arrowImageView=_arrowImageView;
 @synthesize coverView=_coverView;
-@synthesize swdelegate=_swdelegate;
+@synthesize editDelegate=_editDelegate;
 @synthesize indexPath=_indexPath;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -36,16 +36,15 @@
 {
     self.textField.delegate=self;
     
-    UITapGestureRecognizer *tapGestRcgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureResponder:)];
-    tapGestRcgr.numberOfTapsRequired=2;
-    tapGestRcgr.numberOfTouchesRequired=1;
-    [self.coverView addGestureRecognizer:tapGestRcgr];
+    UITapGestureRecognizer *doubleTapGestRcgr=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureResponder:)];
+    doubleTapGestRcgr.numberOfTapsRequired=2;
+    doubleTapGestRcgr.numberOfTouchesRequired=1;
+    [self.coverView addGestureRecognizer:doubleTapGestRcgr];
     
     UILongPressGestureRecognizer *longGestRcgr=[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureResponder:)];
     [self.coverView addGestureRecognizer:longGestRcgr];
     
 }
-
 - (void)awakeFromNib
 {
     [self initialize];
@@ -54,13 +53,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
-    self.backgroundImageView.image=[SWTableViewCell imageBySelected:selected placeType:_placeType];
-    if (NO==selected)
-    {
-        [self setTextFieldEditing:selected];
-    }
 }
 
 + (UIImage*)imageBySelected:(BOOL)isSel placeType:(CellPlaceType)type
@@ -104,28 +97,46 @@
 }
 
 #pragma mark - user interaction -
+
+-(void)setBackgroundImageViewSelected:(BOOL)isSel
+{
+    self.backgroundImageView.image=[SWTableViewCell imageBySelected:isSel placeType:_placeType];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self setBackgroundImageViewSelected:YES];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self setBackgroundImageViewSelected:NO];
+}
+
 - (void)setTextFieldEditing:(BOOL)edit
 {
     if (edit)
     {
         [self.textField becomeFirstResponder];
         self.coverView.hidden=YES;
-        if (self.swdelegate&&[self.swdelegate respondsToSelector:@selector(swtableviewcellDidBeginEditing:)])
+        
+        if (self.editDelegate&&[self.editDelegate respondsToSelector:@selector(swtableviewcellDidBeginEditing:)])
         {
-            [self.swdelegate swtableviewcellDidBeginEditing:self];
+            [self.editDelegate swtableviewcellDidBeginEditing:self];
         }
+        
     }
     else
     {
         [self.textField resignFirstResponder];
         self.coverView.hidden=NO;
-        if (self.swdelegate&&[self.swdelegate respondsToSelector:@selector(swtableviewcellDidEndEditing:)])
+        
+        if (self.editDelegate&&[self.editDelegate respondsToSelector:@selector(swtableviewcellDidEndEditing:)])
         {
-            [self.swdelegate swtableviewcellDidEndEditing:self];
+            [self.editDelegate swtableviewcellDidEndEditing:self];
         }
+        
     }
-
-    
 }
 
 - (void)doubleTapGestureResponder:(UITapGestureRecognizer*)tapGestureRcgr
@@ -143,11 +154,14 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.arrowImageView.hidden=YES;
+    [self setBackgroundImageViewSelected:NO];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     self.arrowImageView.hidden=NO;
+    [self setBackgroundImageViewSelected:NO];
+    [self setTextFieldEditing:NO];
 }
 
 
