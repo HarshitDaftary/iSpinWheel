@@ -8,6 +8,8 @@
 
 #import "BiWheelController.h"
 #import "ZNImageWheel.h"
+#import "SchemeTableViewController.h"
+#import "SWSchemeManager.h"
 
 @interface BiWheelController ()
 
@@ -41,10 +43,7 @@
     self.titleView.title.text=@"双轮";
     
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
-    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
-    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self setTitleButtonType:TitleButtonType_More forLeft:NO];
     
     [_imageWheel0 initialize];
     [_imageWheel0 setColorImageWithSegmentNumber:20 segmentColorArray:nil];
@@ -59,18 +58,27 @@
     _imageWheel1.delegate=self;
 }
 
-- (void)editButtonClick:(id)sender
+-(void)titleLeftButtonClick:(id)sender
 {
-    if (NO==_imageWheel0.isEditMode)
-    {
-        [_imageWheel0 startEditAnimationWithDelay:0];
-        [_imageWheel1 startEditAnimationWithDelay:0.5];
-    }
-    else
-    {
-        [_imageWheel0 stopEditAnimation];
-        [_imageWheel1 stopEditAnimation];
-    }
+    [self goBack:sender];
+}
+
+-(void)titleRightButtonClick:(id)sender
+{
+    SchemeTableViewController *schemeVC=[[SchemeTableViewController alloc] initWithSchemeGroupType:SchemeGroupType_BiWheel];
+    [[SWNavigationController shareNavigationController] pushViewController:schemeVC animated:YES];
+    return;
+    
+//    if (NO==_imageWheel0.isEditMode)
+//    {
+//        [_imageWheel0 startEditAnimationWithDelay:0];
+//        [_imageWheel1 startEditAnimationWithDelay:0.5];
+//    }
+//    else
+//    {
+//        [_imageWheel0 stopEditAnimation];
+//        [_imageWheel1 stopEditAnimation];
+//    }
 }
 
 - (void)didStopSpinWheel:(ZNImageWheel *)imgWheel atSegment:(NSInteger)index selectedText:(NSString *)text automatic:(BOOL)isAuto

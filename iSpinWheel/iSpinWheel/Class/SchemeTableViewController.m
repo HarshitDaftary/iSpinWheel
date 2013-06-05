@@ -8,14 +8,15 @@
 
 #import "SchemeTableViewController.h"
 #import "SWTableViewCell.h"
-#import "WheelSchemeManager.h"
+#import "SWSchemeManager.h"
+#import "WheelMenuTableViewController.h"
+#import "HeaderView.h"
+#import "SchemeTableViewCell.h"
 
 @interface SchemeTableViewController ()
 {
-    CGPoint _contentOffset;
-}
 
-@property (nonatomic, assign) WheelSchemeManager *schemeManager;
+}
 
 @end
 
@@ -33,6 +34,18 @@
     return self;
 }
 
+- (id)initWithSchemeGroupType:(SchemeGroupType)type
+{
+    self=[super init];
+    if (self)
+    {
+        self.schemeGroupType=type;
+        self.schemeManager=[SWSchemeManager shareInstanceOfSchemeType:type];
+        [self.schemeManager addObserver:self forKeyPath:@"schemeNameInUsing_v" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -41,14 +54,15 @@
     self.titleView.title.text=@"我的方案";
     
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
-    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
-    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.schemeManager=[WheelSchemeManager shareInstanceOfSchemeType:SchemeGroupType_MonoWheel];
     
 }
+
+- (void)dealloc
+{
+    [self.schemeManager removeObserver:self forKeyPath:@"schemeNameInUsing_v"];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,33 +70,48 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - user interaction -
-- (void)editButtonClick:(id)sender
+#pragma mark - User interaction -
+
+-(void)titleLeftButtonClick:(id)sender
+{
+    [self goBack:sender];
+}
+
+-(void)titleRightButtonClick:(id)sender
 {
     
 }
 
 #pragma mark - UITableViewDelegate -
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return CellHeight;
+    HeaderView *hView=[HeaderView headerView];
+    hView.titleLabel.text=@"方案列表";
+    return hView;
 }
 
 #pragma mark - UITableViewDataSource -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.schemeManager schemeNameList] count];
+#warning test code
+//    return [[self.schemeManager schemeNameList] count];
+    NSInteger count=[[self.schemeManager schemeNameList] count];
+    if (self.schemeGroupType==SchemeGroupType_MonoWheel)
+    {
+        count*=10;
+    }
+    return count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString* reuseId = @"Cell_In_SchemeTableViewController";
-    SWTableViewCell* swcell = (SWTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseId];
+    SchemeTableViewCell* swcell = (SchemeTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:reuseId];
     if (nil==swcell)
     {
-        swcell = (SWTableViewCell*)[UIView viewWithNib:@"SWTableViewCell" owner:nil];
-        swcell.editDelegate=self;
+        swcell=(SchemeTableViewCell*)[SchemeTableViewCell tableViewCell];
+        swcell.swcellDelegate=self;
     }
     
     NSInteger row=indexPath.row;
@@ -108,126 +137,51 @@
         }
     }
     swcell.indexPath=indexPath;
-    [swcell configureCellWithText:[[self.schemeManager schemeNameList] objectAtIndex:row] placeType:type];
+#warning test code
+//    NSString *text=[[self.schemeManager schemeNameList] objectAtIndex:row];
+    NSString *text=[[self.schemeManager schemeNameList] objectAtIndex:row%[[self.schemeManager schemeNameList] count]];
+    swcell.isInUsing=[text isEqualToString:[self.schemeManager schemeNameInUsing]];
+    [swcell configureCellWithText:text placeType:type];
     
     return swcell;
-}
-
-#pragma mark - title View animation -
-#pragma mark override
-- (void)hideTitleViewWithAnimation:(BOOL)animate
-{
-    UIView *animateView=self.titleView;
-    void (^preAction)(void)=^(void)
-    {
-        
-    };
-    void (^animatingAction)(void)=^(void)
-    {
-        animateView.frame=CGRectMake(0, -44, 320, 44);
-        animateView.alpha=0.0f;
-        
-        self.tableView.contentOffset=CGPointMake(0, -20);
-        self.tableView.contentInset=UIEdgeInsetsMake(20, 0, 20, 0);
-        
-    };
-    void (^finishAction)(BOOL)=^(BOOL finished)
-    {
-        animateView.hidden=YES;
-    };
-    
-    preAction();
-    if (animate)
-    {
-        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:animatingAction completion:finishAction];
-    }
-    else
-    {
-        animatingAction();
-        finishAction(YES);
-    }
-}
-
-- (void)showTitleViewWithAnimation:(BOOL)animate
-{
-    
-    UIView *animateView=self.titleView;
-    
-    void (^preAction)(void)=^(void)
-    {
-        animateView.hidden=NO;
-        animateView.alpha=0.0f;
-    };
-    void (^animatingAction)(void)=^(void)
-    {
-        animateView.frame=CGRectMake(0, 0, 320, 44);
-        animateView.alpha=1.0f;
-        
-        self.tableView.contentOffset=CGPointMake(0, -20-44);
-        self.tableView.contentInset=UIEdgeInsetsMake(20+44, 0, 20, 0);
-        
-    };
-    void (^finishAction)(BOOL)=^(BOOL finished)
-    {
-    };
-    
-    preAction();
-    if (animate)
-    {
-        
-        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:animatingAction completion:finishAction];
-    }
-    else
-    {
-        animatingAction();
-        finishAction(YES);
-    }
-}
-
-#pragma mark UIScrollViewDelegate
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-{
-    _contentOffset=scrollView.contentOffset;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    if (NO==scrollView.dragging)
-    {
-        return;
-    }
-    CGPoint curOffset=scrollView.contentOffset;
-    CGFloat delta=curOffset.y-_contentOffset.y;
-    const CGFloat threshold=60;
-    if (delta>=threshold)
-    {
-        if (NO==self.titleView.hidden)
-        {
-            [self hideTitleViewWithAnimation:YES];
-        }
-        _contentOffset=curOffset;
-    }
-    else if (delta<=-threshold)
-    {
-        if (NO!=self.titleView.hidden)
-        {
-            [self showTitleViewWithAnimation:YES];
-        }
-        _contentOffset=curOffset;
-    }
-    
 }
 
 #pragma mark - SWTableViewCellDelegate -
 - (void)swtableviewcellDidBeginEditing:(SWTableViewCell *)cell
 {
-    SWLog(@"");
+    [super swtableviewcellDidBeginEditing:cell];
 }
 
 - (void)swtableviewcellDidEndEditing:(SWTableViewCell *)cell
 {
+    [super swtableviewcellDidEndEditing:cell];
+}
+
+- (void)swtableviewcellBeSelected:(SWTableViewCell *)cell
+{
     SWLog(@"");
+    if (self.isEditMode)
+    {
+        
+    }
+    else
+    {
+        WheelMenuTableViewController *menuTVC=[[WheelMenuTableViewController alloc] initWithSchemeName:[[self.schemeManager schemeNameList] objectAtIndex:cell.indexPath.row]  schemeGroupType:self.schemeGroupType];
+        [[SWNavigationController shareNavigationController] pushViewController:menuTVC animated:YES];
+
+    }
+}
+
+#pragma mark - KVO -
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([object isEqual:self.schemeManager])
+    {
+        if ([keyPath isEqualToString:@"schemeNameInUsing_v"])
+        {
+            [self.tableView reloadData];
+        }
+    }
 }
 
 

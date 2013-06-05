@@ -8,7 +8,6 @@
 
 #import "UIViewController_z.h"
 #import "TitleView.h"
-#import "SWNavigationController.h"
 
 @interface UIViewController_z ()
 
@@ -36,7 +35,9 @@
     self.titleView=[TitleView titleView];
     self.titleView.backgroundImageView.image=[UIImage resizeableImageNamed:@"creamcolor_bk"];
     [self.view addSubview:self.titleView];
-//    [self.view bringSubviewToFront:self.titleView];
+    
+    [self.titleView.leftButton addTarget:self action:@selector(titleLeftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.titleView.rightButton addTarget:self action:@selector(titleRightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
     [self addTapGestureRecognizer];
 }
@@ -52,9 +53,19 @@
 }
 
 #pragma mark - user interaction -
-- (void)back:(id)sender
+-(void)goBack:(id)sender
 {
     [[SWNavigationController shareNavigationController] popViewControllerAnimated:YES];
+}
+
+- (void)titleLeftButtonClick:(id)sender
+{
+    
+}
+
+- (void)titleRightButtonClick:(id)sender
+{
+    
 }
 
 #pragma mark - UI -
@@ -76,8 +87,14 @@
             [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_edit_disabled"] forState:UIControlStateHighlighted];
             break;
         case TitleButtonType_Text:
-            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_bk_normal"] forState:UIControlStateNormal];
-            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_bk_down"] forState:UIControlStateHighlighted];
+//            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_bk_normal"] forState:UIControlStateNormal];
+//            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_bk_down"] forState:UIControlStateHighlighted];
+            [button setBackgroundImage:nil forState:UIControlStateNormal];
+            [button setBackgroundImage:nil forState:UIControlStateHighlighted];
+            break;
+        case TitleButtonType_More:
+            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_more"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_more_disabled"] forState:UIControlStateHighlighted];
             break;
         default:
             NSAssert(YES, @"error type.");

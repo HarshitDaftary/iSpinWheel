@@ -8,7 +8,6 @@
 
 #import "SWAppDelegate.h"
 #import "MainViewController.h"
-#import "SWNavigationController.h"
 
 @implementation SWAppDelegate
 @synthesize navigationController=_navigationController;

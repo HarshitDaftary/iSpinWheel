@@ -23,7 +23,18 @@
 		74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */; };
 		74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */; };
 		74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */; };
-		74325B64175DF539003E9561 /* WheelSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B63175DF537003E9561 /* WheelSchemeManager.m */; };
+		74325B64175DF539003E9561 /* SWSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B63175DF537003E9561 /* SWSchemeManager.m */; };
+		74325B67175EDA6C003E9561 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B66175EDA6C003E9561 /* HeaderView.m */; };
+		74325B69175EDAA7003E9561 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74325B68175EDAA6003E9561 /* HeaderView.xib */; };
+		74325B6D175EE113003E9561 /* SWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B6B175EE110003E9561 /* SWTableViewController.m */; };
+		74325B6E175EE113003E9561 /* SWTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74325B6C175EE112003E9561 /* SWTableViewController.xib */; };
+		74325B7C175EFEF6003E9561 /* scheme_using_tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B7B175EFEF6003E9561 /* scheme_using_tick.png */; };
+		74325B7F175F0BF5003E9561 /* SchemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B7E175F0BF3003E9561 /* SchemeTableViewCell.m */; };
+		74325B82175F0C1A003E9561 /* WheelMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B81175F0C18003E9561 /* WheelMenuTableViewCell.m */; };
+		74325B84175F12DF003E9561 /* WheelMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74325B83175F12DC003E9561 /* WheelMenuTableViewCell.xib */; };
+		74325B86175F1664003E9561 /* btn_icon_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B85175F1664003E9561 /* btn_icon_add.png */; };
+		74325B91175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */; };
+		74325B92175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */; };
 		7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80016E9F267003B2195 /* BiWheelController.xib */; };
 		7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80216E9F278003B2195 /* TriWheelController.xib */; };
 		745FC35F16E6E2A500F61FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745FC35E16E6E2A500F61FED /* QuartzCore.framework */; };
@@ -43,11 +54,9 @@
 		74C5BE7B175D8168009B552C /* green@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE78175D8168009B552C /* green@2x.png */; };
 		74C5BE7C175D8168009B552C /* darkyellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE79175D8168009B552C /* darkyellow@2x.png */; };
 		74C5BE80175D8B83009B552C /* SchemeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */; };
-		74C5BE81175D8B83009B552C /* SchemeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */; };
 		74C5BE85175D8C72009B552C /* WheelMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */; };
-		74C5BE86175D8C72009B552C /* WheelMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */; };
 		74C5BE89175D8CC7009B552C /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE88175D8CC7009B552C /* SWTableViewCell.m */; };
-		74C5BE8B175D8CDD009B552C /* SWTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */; };
+		74C5BE8B175D8CDD009B552C /* SchemeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE8A175D8CDD009B552C /* SchemeTableViewCell.xib */; };
 		74DE8EFE175C4E730029C3D0 /* UIViewController+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */; };
 		74DE8F06175C50D10029C3D0 /* UIViewController_z.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DE8F05175C50D10029C3D0 /* UIViewController_z.m */; };
 		74DE8F13175C6B7E0029C3D0 /* creamcolor_bk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */; };
@@ -100,8 +109,23 @@
 		74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MonoWheelSchemeGroup.plist; sourceTree = "<group>"; };
 		74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BiWheelSchemeGroup.plist; sourceTree = "<group>"; };
 		74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriWheelSchemeGroup.plist; sourceTree = "<group>"; };
-		74325B62175DF536003E9561 /* WheelSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelSchemeManager.h; sourceTree = "<group>"; };
-		74325B63175DF537003E9561 /* WheelSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelSchemeManager.m; sourceTree = "<group>"; };
+		74325B62175DF536003E9561 /* SWSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSchemeManager.h; sourceTree = "<group>"; };
+		74325B63175DF537003E9561 /* SWSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSchemeManager.m; sourceTree = "<group>"; };
+		74325B65175EDA6A003E9561 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		74325B66175EDA6C003E9561 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		74325B68175EDAA6003E9561 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		74325B6A175EE10E003E9561 /* SWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewController.h; sourceTree = "<group>"; };
+		74325B6B175EE110003E9561 /* SWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewController.m; sourceTree = "<group>"; };
+		74325B6C175EE112003E9561 /* SWTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWTableViewController.xib; sourceTree = "<group>"; };
+		74325B7B175EFEF6003E9561 /* scheme_using_tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scheme_using_tick.png; sourceTree = "<group>"; };
+		74325B7D175F0BF1003E9561 /* SchemeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeTableViewCell.h; sourceTree = "<group>"; };
+		74325B7E175F0BF3003E9561 /* SchemeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeTableViewCell.m; sourceTree = "<group>"; };
+		74325B80175F0C16003E9561 /* WheelMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelMenuTableViewCell.h; sourceTree = "<group>"; };
+		74325B81175F0C18003E9561 /* WheelMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelMenuTableViewCell.m; sourceTree = "<group>"; };
+		74325B83175F12DC003E9561 /* WheelMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WheelMenuTableViewCell.xib; sourceTree = "<group>"; };
+		74325B85175F1664003E9561 /* btn_icon_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_icon_add.png; sourceTree = "<group>"; };
+		74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_more_disabled@2x~iphone.png"; sourceTree = "<group>"; };
+		74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_more@2x~iphone.png"; sourceTree = "<group>"; };
 		7453F80016E9F267003B2195 /* BiWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiWheelController.xib; sourceTree = "<group>"; };
 		7453F80216E9F278003B2195 /* TriWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TriWheelController.xib; sourceTree = "<group>"; };
 		745FC35E16E6E2A500F61FED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -127,13 +151,11 @@
 		74C5BE79175D8168009B552C /* darkyellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkyellow@2x.png"; sourceTree = "<group>"; };
 		74C5BE7D175D8B83009B552C /* SchemeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeTableViewController.h; sourceTree = "<group>"; };
 		74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeTableViewController.m; sourceTree = "<group>"; };
-		74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeTableViewController.xib; sourceTree = "<group>"; };
 		74C5BE82175D8C72009B552C /* WheelMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelMenuTableViewController.h; sourceTree = "<group>"; };
 		74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelMenuTableViewController.m; sourceTree = "<group>"; };
-		74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WheelMenuTableViewController.xib; sourceTree = "<group>"; };
 		74C5BE87175D8CC7009B552C /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
 		74C5BE88175D8CC7009B552C /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
-		74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWTableViewCell.xib; sourceTree = "<group>"; };
+		74C5BE8A175D8CDD009B552C /* SchemeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SchemeTableViewCell.xib; sourceTree = "<group>"; };
 		74DE8EFC175C4E730029C3D0 /* UIViewController+z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+z.h"; sourceTree = "<group>"; };
 		74DE8EFD175C4E730029C3D0 /* UIViewController+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+z.m"; sourceTree = "<group>"; };
 		74DE8F04175C50D10029C3D0 /* UIViewController_z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewController_z.h; sourceTree = "<group>"; };
@@ -238,6 +260,8 @@
 		74DE8F07175C6B7E0029C3D0 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				74325B85175F1664003E9561 /* btn_icon_add.png */,
+				74325B7B175EFEF6003E9561 /* scheme_using_tick.png */,
 				74325B4B175DB660003E9561 /* table_cell_bk_alone_sel@2x.png */,
 				74325B4C175DB660003E9561 /* table_cell_bk_alone@2x.png */,
 				74325B4D175DB660003E9561 /* table_cell_bk_bottom_sel@2x.png */,
@@ -255,6 +279,8 @@
 				74C5BE70175CAD2A009B552C /* 2wheel.png */,
 				74C5BE71175CAD2B009B552C /* 3wheel.png */,
 				74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */,
+				74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */,
+				74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */,
 				74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */,
 				74DE8F0A175C6B7E0029C3D0 /* navi_btn_bk_normal@2x~iphone.png */,
 				74DE8F0B175C6B7E0029C3D0 /* navi_btn_icon_back@2x~iphone.png */,
@@ -298,17 +324,26 @@
 		74E20C8017053C2200A78A09 /* tableVC */ = {
 			isa = PBXGroup;
 			children = (
-				74325B62175DF536003E9561 /* WheelSchemeManager.h */,
-				74325B63175DF537003E9561 /* WheelSchemeManager.m */,
+				74325B62175DF536003E9561 /* SWSchemeManager.h */,
+				74325B63175DF537003E9561 /* SWSchemeManager.m */,
 				74C5BE87175D8CC7009B552C /* SWTableViewCell.h */,
 				74C5BE88175D8CC7009B552C /* SWTableViewCell.m */,
-				74C5BE8A175D8CDD009B552C /* SWTableViewCell.xib */,
+				74325B7D175F0BF1003E9561 /* SchemeTableViewCell.h */,
+				74325B7E175F0BF3003E9561 /* SchemeTableViewCell.m */,
+				74C5BE8A175D8CDD009B552C /* SchemeTableViewCell.xib */,
+				74325B80175F0C16003E9561 /* WheelMenuTableViewCell.h */,
+				74325B81175F0C18003E9561 /* WheelMenuTableViewCell.m */,
+				74325B83175F12DC003E9561 /* WheelMenuTableViewCell.xib */,
+				74325B6A175EE10E003E9561 /* SWTableViewController.h */,
+				74325B6B175EE110003E9561 /* SWTableViewController.m */,
+				74325B6C175EE112003E9561 /* SWTableViewController.xib */,
+				74325B65175EDA6A003E9561 /* HeaderView.h */,
+				74325B66175EDA6C003E9561 /* HeaderView.m */,
+				74325B68175EDAA6003E9561 /* HeaderView.xib */,
 				74C5BE7D175D8B83009B552C /* SchemeTableViewController.h */,
 				74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */,
-				74C5BE7F175D8B83009B552C /* SchemeTableViewController.xib */,
 				74C5BE82175D8C72009B552C /* WheelMenuTableViewController.h */,
 				74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */,
-				74C5BE84175D8C72009B552C /* WheelMenuTableViewController.xib */,
 			);
 			name = tableVC;
 			sourceTree = "<group>";
@@ -498,9 +533,7 @@
 				74C5BE7A175D8168009B552C /* lightyellow@2x.png in Resources */,
 				74C5BE7B175D8168009B552C /* green@2x.png in Resources */,
 				74C5BE7C175D8168009B552C /* darkyellow@2x.png in Resources */,
-				74C5BE81175D8B83009B552C /* SchemeTableViewController.xib in Resources */,
-				74C5BE86175D8C72009B552C /* WheelMenuTableViewController.xib in Resources */,
-				74C5BE8B175D8CDD009B552C /* SWTableViewCell.xib in Resources */,
+				74C5BE8B175D8CDD009B552C /* SchemeTableViewCell.xib in Resources */,
 				74325B4A175D9717003E9561 /* table_arrow.png in Resources */,
 				74325B53175DB660003E9561 /* table_cell_bk_alone_sel@2x.png in Resources */,
 				74325B54175DB660003E9561 /* table_cell_bk_alone@2x.png in Resources */,
@@ -513,6 +546,13 @@
 				74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */,
 				74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */,
 				74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */,
+				74325B69175EDAA7003E9561 /* HeaderView.xib in Resources */,
+				74325B6E175EE113003E9561 /* SWTableViewController.xib in Resources */,
+				74325B7C175EFEF6003E9561 /* scheme_using_tick.png in Resources */,
+				74325B84175F12DF003E9561 /* WheelMenuTableViewCell.xib in Resources */,
+				74325B86175F1664003E9561 /* btn_icon_add.png in Resources */,
+				74325B91175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png in Resources */,
+				74325B92175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +584,11 @@
 				74C5BE80175D8B83009B552C /* SchemeTableViewController.m in Sources */,
 				74C5BE85175D8C72009B552C /* WheelMenuTableViewController.m in Sources */,
 				74C5BE89175D8CC7009B552C /* SWTableViewCell.m in Sources */,
-				74325B64175DF539003E9561 /* WheelSchemeManager.m in Sources */,
+				74325B64175DF539003E9561 /* SWSchemeManager.m in Sources */,
+				74325B67175EDA6C003E9561 /* HeaderView.m in Sources */,
+				74325B6D175EE113003E9561 /* SWTableViewController.m in Sources */,
+				74325B7F175F0BF5003E9561 /* SchemeTableViewCell.m in Sources */,
+				74325B82175F0C1A003E9561 /* WheelMenuTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,12 +667,12 @@
 		A69D7F2016E62BF000DD1DE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: zhang shaohan (CHV55RKEN9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zhang Jianye (2F4935C2NP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iSpinWheel/iSpinWheel-Prefix.h";
 				INFOPLIST_FILE = "iSpinWheel/iSpinWheel-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5165E90E-B4A5-40D5-89E9-5C31CA3339E8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FA22DD84-1514-4677-8AB6-FF69FDC27473";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

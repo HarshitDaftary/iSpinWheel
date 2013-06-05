@@ -1,5 +1,5 @@
 //
-//  WheelSchemeManager.h
+//  SWSchemeManager.h
 //  iSpinWheel
 //
 //  Created by Zion on 6/4/13.
@@ -16,11 +16,15 @@ typedef enum
     
 }SchemeGroupType;
 
-@interface WheelSchemeManager : NSObject
+@interface SWSchemeManager : NSObject
 
 - (id)initWithSchemeType:(SchemeGroupType)type;
 
-+ (WheelSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type;
++ (SWSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type;
+
+- (NSString*)schemeNameInUsing;
+
+- (BOOL)setSchemeInUsing:(NSString*)schemeName;
 
 - (BOOL)schemeAdded:(NSString*)schemeName;
 

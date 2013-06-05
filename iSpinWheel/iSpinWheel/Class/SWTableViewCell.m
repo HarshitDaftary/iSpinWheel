@@ -18,9 +18,8 @@
 @implementation SWTableViewCell
 @synthesize backgroundImageView=_backgroundImageView;
 @synthesize textField=_textField;
-@synthesize arrowImageView=_arrowImageView;
 @synthesize coverView=_coverView;
-@synthesize editDelegate=_editDelegate;
+@synthesize swcellDelegate=_editDelegate;
 @synthesize indexPath=_indexPath;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -31,6 +30,13 @@
     }
     return self;
 }
+
++(id)tableViewCell
+{
+    SWTableViewCell *cell=(SWTableViewCell*)[UIView viewWithNib:NSStringFromClass([self class]) owner:nil];
+    return cell;
+}
+
 
 - (void)initialize
 {
@@ -110,7 +116,14 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self setBackgroundImageViewSelected:NO];
+    //let the selected background show for some time.
+    [self syncTask:^{
+        [self setBackgroundImageViewSelected:NO];
+    }after:0.5];
+    if (self.swcellDelegate&&[self.swcellDelegate respondsToSelector:@selector(swtableviewcellBeSelected:)])
+    {
+        [self.swcellDelegate swtableviewcellBeSelected:self];
+    }
 }
 
 - (void)setTextFieldEditing:(BOOL)edit
@@ -120,9 +133,9 @@
         [self.textField becomeFirstResponder];
         self.coverView.hidden=YES;
         
-        if (self.editDelegate&&[self.editDelegate respondsToSelector:@selector(swtableviewcellDidBeginEditing:)])
+        if (self.swcellDelegate&&[self.swcellDelegate respondsToSelector:@selector(swtableviewcellDidBeginEditing:)])
         {
-            [self.editDelegate swtableviewcellDidBeginEditing:self];
+            [self.swcellDelegate swtableviewcellDidBeginEditing:self];
         }
         
     }
@@ -131,9 +144,9 @@
         [self.textField resignFirstResponder];
         self.coverView.hidden=NO;
         
-        if (self.editDelegate&&[self.editDelegate respondsToSelector:@selector(swtableviewcellDidEndEditing:)])
+        if (self.swcellDelegate&&[self.swcellDelegate respondsToSelector:@selector(swtableviewcellDidEndEditing:)])
         {
-            [self.editDelegate swtableviewcellDidEndEditing:self];
+            [self.swcellDelegate swtableviewcellDidEndEditing:self];
         }
         
     }
@@ -153,13 +166,11 @@
 #pragma mark - UITextFieldDelegate -
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    self.arrowImageView.hidden=YES;
     [self setBackgroundImageViewSelected:NO];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.arrowImageView.hidden=NO;
     [self setBackgroundImageViewSelected:NO];
     [self setTextFieldEditing:NO];
 }

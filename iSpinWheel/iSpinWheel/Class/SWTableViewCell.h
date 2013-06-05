@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define CellHeight (44)
 
 typedef enum
 {
@@ -20,11 +19,14 @@ typedef enum
 }CellPlaceType;
 
 @class SWTableViewCell;
-@protocol SWTableViewCellEditDelegate <NSObject>
+@protocol SWTableViewCellDelegate <NSObject>
 
 @required
 - (void)swtableviewcellDidBeginEditing:(SWTableViewCell*)cell;
+
 - (void)swtableviewcellDidEndEditing:(SWTableViewCell*)cell;
+
+-(void)swtableviewcellBeSelected:(SWTableViewCell*)cell;
 
 @end
 //自定义背景，滑动删除，双击or长按重命名，header添加，uitextfield。
@@ -32,11 +34,13 @@ typedef enum
 
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
-@property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
 @property (strong, nonatomic) IBOutlet UIView *coverView;
 @property (strong, nonatomic) NSIndexPath *indexPath;
-@property (assign, nonatomic) id<SWTableViewCellEditDelegate> editDelegate;
+@property (assign, nonatomic) id<SWTableViewCellDelegate> swcellDelegate;
+
++ (id)tableViewCell;
 
 - (void)configureCellWithText:(NSString*)text placeType:(CellPlaceType)type;
+
 
 @end

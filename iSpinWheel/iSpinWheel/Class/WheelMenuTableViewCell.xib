@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">11G63</string>
+		<string key="IBDocument.SystemVersion">11E53</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1138.51</string>
+		<string key="IBDocument.AppKitVersion">1138.47</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -44,38 +44,26 @@
 							<object class="IBUIImageView" id="74173242">
 								<reference key="NSNextResponder" ref="489291324"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{280, 44}</string>
+								<string key="NSFrame">{{3, 0}, {274, 44}}</string>
 								<reference key="NSSuperview" ref="489291324"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="790707094"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<object class="IBUIImageView" id="756053856">
+							<object class="IBUITextField" id="313032716">
 								<reference key="NSNextResponder" ref="489291324"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{253, 15}, {9, 14}}</string>
+								<string key="NSFrame">{{23, 7}, {248, 30}}</string>
 								<reference key="NSSuperview" ref="489291324"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor" id="989298056">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MCAwAA</bytes>
 								</object>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">table_arrow.png</string>
-								</object>
-							</object>
-							<object class="IBUITextField" id="313032716">
-								<reference key="NSNextResponder" ref="489291324"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 7}, {260, 30}}</string>
-								<reference key="NSSuperview" ref="489291324"/>
-								<reference key="NSNextKeyView" ref="756053856"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<reference key="IBUIBackgroundColor" ref="989298056"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -108,8 +96,9 @@
 							<object class="IBUIView" id="790707094">
 								<reference key="NSNextResponder" ref="489291324"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{280, 44}</string>
+								<string key="NSFrame">{{3, 0}, {274, 44}}</string>
 								<reference key="NSSuperview" ref="489291324"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="313032716"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="989298056"/>
@@ -118,6 +107,7 @@
 						</array>
 						<string key="NSFrameSize">{280, 43}</string>
 						<reference key="NSSuperview" ref="651022144"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74173242"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<reference key="IBUIBackgroundColor" ref="989298056"/>
@@ -130,6 +120,7 @@
 				</array>
 				<string key="NSFrameSize">{280, 44}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="489291324"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<reference key="IBUIBackgroundColor" ref="989298056"/>
@@ -155,14 +146,6 @@
 						<reference key="destination" ref="74173242"/>
 					</object>
 					<int key="connectionID">12</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">arrowImageView</string>
-						<reference key="source" ref="651022144"/>
-						<reference key="destination" ref="756053856"/>
-					</object>
-					<int key="connectionID">13</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -198,7 +181,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="313032716"/>
 							<reference ref="74173242"/>
-							<reference ref="756053856"/>
 							<reference ref="790707094"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -207,11 +189,6 @@
 						<int key="objectID">4</int>
 						<reference key="object" ref="313032716"/>
 						<array class="NSMutableArray" key="children"/>
-						<reference key="parent" ref="651022144"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">8</int>
-						<reference key="object" ref="756053856"/>
 						<reference key="parent" ref="651022144"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -233,26 +210,59 @@
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="14.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="3.CustomClassName">SWTableViewCell</string>
+				<string key="3.CustomClassName">WheelMenuTableViewCell</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">15</int>
+			<int key="maxID">17</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">SWTableViewCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="backgroundImageView">UIImageView</string>
+						<string key="coverView">UIView</string>
+						<string key="textField">UITextField</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="backgroundImageView">
+							<string key="name">backgroundImageView</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="coverView">
+							<string key="name">coverView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="textField">
+							<string key="name">textField</string>
+							<string key="candidateClassName">UITextField</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SWTableViewCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">WheelMenuTableViewCell</string>
+					<string key="superclassName">SWTableViewCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/WheelMenuTableViewCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">table_arrow.png</string>
-			<string key="NS.object.0">{18, 28}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
 </archive>

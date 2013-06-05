@@ -6,11 +6,11 @@
 //  Copyright (c) 2013 Zion. All rights reserved.
 //
 
-#import "UIViewController_z.h"
-#import "SWTableViewCell.h"
+#import "SWTableViewController.h"
+#import "SWSchemeManager.h"
 
-@interface SchemeTableViewController : UIViewController_z<UITableViewDataSource,UITableViewDelegate,SWTableViewCellEditDelegate>
+@interface SchemeTableViewController : SWTableViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+- (id)initWithSchemeGroupType:(SchemeGroupType)type;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "TriWheelController.h"
 #import "ZNImageWheel.h"
+#import "SchemeTableViewController.h"
+#import "SWSchemeManager.h"
 
 @interface TriWheelController ()
 
@@ -45,9 +47,7 @@
     self.titleView.title.text=@"三轮";
     
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
-    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
-    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitleButtonType:TitleButtonType_More forLeft:NO];
     
     [_imageWheel0 initialize];
     [_imageWheel0 setColorImageWithSegmentNumber:5 segmentColorArray:nil];
@@ -76,8 +76,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)editButtonClick:(id)sender
+-(void)titleLeftButtonClick:(id)sender
 {
+    [self goBack:sender];
+}
+
+-(void)titleRightButtonClick:(id)sender
+{
+    SchemeTableViewController *schemeVC=[[SchemeTableViewController alloc] initWithSchemeGroupType:SchemeGroupType_TriWheel];
+    [[SWNavigationController shareNavigationController] pushViewController:schemeVC animated:YES];
+    return;
+    
     if (NO==_imageWheel0.isEditMode)
     {
         [_imageWheel0 startEditAnimationWithDelay:0];

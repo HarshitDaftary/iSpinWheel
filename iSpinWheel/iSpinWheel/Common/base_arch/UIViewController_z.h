@@ -13,7 +13,8 @@ typedef enum
     TitleButtonType_Back,
     TitleButtonType_Close,
     TitleButtonType_Edit,
-    TitleButtonType_Text
+    TitleButtonType_Text,
+    TitleButtonType_More
 }TitleButtonType;
 
 @class TitleView;
@@ -27,6 +28,11 @@ typedef enum
 - (void)showTitleViewWithAnimation:(BOOL)animate;
 - (void)hideTitleViewWithAnimation:(BOOL)animate;
 
-- (void)back:(id)sender;
+- (void)goBack:(id)sender;
+
+- (void)titleLeftButtonClick:(id)sender;
+
+- (void)titleRightButtonClick:(id)sender;
+
 
 @end

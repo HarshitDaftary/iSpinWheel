@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Zion. All rights reserved.
 //
 
-#import "UIViewController_z.h"
+#import "SWTableViewController.h"
+#import "SWSchemeManager.h"
 
-@interface WheelMenuTableViewController : UIViewController_z
+@interface WheelMenuTableViewController : SWTableViewController
+
+-(id)initWithSchemeName:(NSString*)schemeName schemeGroupType:(SchemeGroupType)type;
 
 @end

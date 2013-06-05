@@ -9,7 +9,6 @@
 #import "MonoWheelController.h"
 #import "ZNImageWheel.h"
 #import "SchemeTableViewController.h"
-#import "SWNavigationController.h"
 #import "DisplayTimer.h"
 
 @interface MonoWheelController ()
@@ -38,9 +37,7 @@
     // Do any additional setup after loading the view from its nib.
     self.titleView.title.text=@"单轮";
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
-    [self.titleView.leftButton addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
-    [self.titleView.rightButton addTarget:self action:@selector(editButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitleButtonType:TitleButtonType_More forLeft:NO];
     
     [self.imageWheel initialize];
     [self.imageWheel setColorImageWithSegmentNumber:20 segmentColorArray:nil];
@@ -50,10 +47,14 @@
     
 }
 
-
-- (void)editButtonClick:(id)sender
+-(void)titleLeftButtonClick:(id)sender
 {
-    SchemeTableViewController *schemeVC=[[SchemeTableViewController alloc] init];
+    [self goBack:sender];
+}
+
+-(void)titleRightButtonClick:(id)sender
+{
+    SchemeTableViewController *schemeVC=[[SchemeTableViewController alloc] initWithSchemeGroupType:SchemeGroupType_MonoWheel];
     [[SWNavigationController shareNavigationController] pushViewController:schemeVC animated:YES];
     return;
     

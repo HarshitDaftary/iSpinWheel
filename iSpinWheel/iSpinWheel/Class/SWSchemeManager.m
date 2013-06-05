@@ -1,28 +1,31 @@
 //
-//  WheelSchemeManager.m
+//  SWSchemeManager.m
 //  iSpinWheel
 //
 //  Created by Zion on 6/4/13.
 //  Copyright (c) 2013 Zion. All rights reserved.
 //
 
-#import "WheelSchemeManager.h"
+#import "SWSchemeManager.h"
 
-static WheelSchemeManager* monoSchemeManager;
-static WheelSchemeManager* biSchemeManager;
-static WheelSchemeManager* triSchemeManager;
+static SWSchemeManager* monoSchemeManager;
+static SWSchemeManager* biSchemeManager;
+static SWSchemeManager* triSchemeManager;
 
-@interface WheelSchemeManager ()
+@interface SWSchemeManager ()
 {
     SchemeGroupType _schemeGroupType;
 }
 
 @property (strong, nonatomic) NSMutableDictionary *schemeDictionary;
-@property (strong, nonatomic) NSMutableArray *schemeNameList;
+@property (strong, nonatomic) NSMutableArray *schemeNameList_v;
+@property (copy, nonatomic) NSString *schemeNameInUsing_v;
 @end
 
-@implementation WheelSchemeManager
+@implementation SWSchemeManager
 @synthesize schemeDictionary=_schemeDictionary;
+@synthesize schemeNameList_v=_schemeNameList_v;
+@synthesize schemeNameInUsing_v=_schemeNameInUsing_v;
 
 #pragma mark - public -
 - (id)initWithSchemeType:(SchemeGroupType)type
@@ -36,28 +39,63 @@ static WheelSchemeManager* triSchemeManager;
     return self;
 }
 
-+ (WheelSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type
+- (NSString*)schemeNameInUsing
+{
+    if (nil!=self.schemeNameInUsing_v)
+    {
+        return self.schemeNameInUsing_v;
+    }
+    NSString *key=[[self schemeGroupNameOfType:_schemeGroupType] stringByAppendingString:@"_inUsing"];
+    self.schemeNameInUsing_v=[[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if (nil==self.schemeNameInUsing_v)
+    {
+        self.SchemeNameInUsing_v=[[self schemeNameList] objectAtIndex:0];
+        [[NSUserDefaults standardUserDefaults] setObject:self.schemeNameInUsing_v forKey:key];
+    }
+    return self.schemeNameInUsing_v;
+}
+
+- (BOOL)setSchemeInUsing:(NSString*)schemeName
+{
+    if ([schemeName isEqualToString:self.schemeNameInUsing_v])
+    {
+        return NO;
+    }
+    NSString *key=[[self schemeGroupNameOfType:_schemeGroupType] stringByAppendingString:@"_inUsing"];
+    if (nil==schemeName)
+    {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:schemeName forKey:key];
+    }
+    self.schemeNameInUsing_v=schemeName;
+    return YES;
+}
+
++ (SWSchemeManager*)shareInstanceOfSchemeType:(SchemeGroupType)type
 {
     switch (type)
     {
         case SchemeGroupType_MonoWheel:
             if (nil==monoSchemeManager)
             {
-                monoSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_MonoWheel];
+                monoSchemeManager=[[SWSchemeManager alloc] initWithSchemeType:SchemeGroupType_MonoWheel];
             }
             return monoSchemeManager;
             break;
         case SchemeGroupType_BiWheel:
             if (nil==biSchemeManager)
             {
-                biSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_BiWheel];
+                biSchemeManager=[[SWSchemeManager alloc] initWithSchemeType:SchemeGroupType_BiWheel];
             }
             return biSchemeManager;
             break;
         case SchemeGroupType_TriWheel:
             if (nil==triSchemeManager)
             {
-                triSchemeManager=[[WheelSchemeManager alloc] initWithSchemeType:SchemeGroupType_TriWheel];
+                triSchemeManager=[[SWSchemeManager alloc] initWithSchemeType:SchemeGroupType_TriWheel];
             }
             return triSchemeManager;
             break;
@@ -111,6 +149,10 @@ static WheelSchemeManager* triSchemeManager;
         return NO;
     }
     [self.schemeDictionary removeObjectForKey:schemeName];
+    if ([schemeName isEqualToString:[self schemeNameInUsing]])
+    {
+        [self setSchemeInUsing:nil];
+    }
     [self loadSchemeNameList];
     return YES;
     
@@ -126,6 +168,7 @@ static WheelSchemeManager* triSchemeManager;
     }
     [self.schemeDictionary setObject:obj forKey:newName];
     [self.schemeDictionary removeObjectForKey:schemeName];
+    [self setSchemeInUsing:newName];
     [self loadSchemeNameList];
     return YES;
 
@@ -163,11 +206,11 @@ static WheelSchemeManager* triSchemeManager;
 
 - (NSArray*)schemeNameList
 {
-    if (nil==_schemeNameList)
+    if (nil==self.schemeNameList_v)
     {
         [self loadSchemeNameList];
     }
-    return _schemeNameList;
+    return self.schemeNameList_v;
 
 }
 
@@ -191,7 +234,7 @@ static WheelSchemeManager* triSchemeManager;
     {
         [nameList addObject:(NSString*)key];
     }
-    self.schemeNameList=nameList;
+    self.schemeNameList_v=nameList;
 }
 
 - (void)loadSchemeFromPlistFileOfType:(SchemeGroupType)type

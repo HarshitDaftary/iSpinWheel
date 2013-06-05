@@ -16,4 +16,5 @@
     #import "SWMacro.h"
     #import "TitleView.h"
     #import "UIViewController_z.h"
+    #import "SWNavigationController.h"
 #endif
