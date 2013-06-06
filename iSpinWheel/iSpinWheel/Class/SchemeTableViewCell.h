@@ -10,8 +10,9 @@
 
 @interface SchemeTableViewCell : SWTableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *arrowImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *schemeUsingTick;
+@property (assign, nonatomic) IBOutlet UIImageView *arrowImageView;
+@property (assign, nonatomic) IBOutlet UIImageView *schemeUsingTick;
+@property (strong, nonatomic) IBOutlet UILabel *label;
 
 @property (assign, nonatomic) BOOL isInUsing;
 

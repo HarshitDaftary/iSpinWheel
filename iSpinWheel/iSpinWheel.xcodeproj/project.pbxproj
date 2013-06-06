@@ -20,9 +20,6 @@
 		74325B58175DB660003E9561 /* table_cell_bk_center@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B50175DB660003E9561 /* table_cell_bk_center@2x.png */; };
 		74325B59175DB660003E9561 /* table_cell_bk_top_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B51175DB660003E9561 /* table_cell_bk_top_sel@2x.png */; };
 		74325B5A175DB660003E9561 /* table_cell_bk_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B52175DB660003E9561 /* table_cell_bk_top@2x.png */; };
-		74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */; };
-		74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */; };
-		74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */; };
 		74325B64175DF539003E9561 /* SWSchemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B63175DF537003E9561 /* SWSchemeManager.m */; };
 		74325B67175EDA6C003E9561 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74325B66175EDA6C003E9561 /* HeaderView.m */; };
 		74325B69175EDAA7003E9561 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74325B68175EDAA6003E9561 /* HeaderView.xib */; };
@@ -35,13 +32,18 @@
 		74325B86175F1664003E9561 /* btn_icon_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B85175F1664003E9561 /* btn_icon_add.png */; };
 		74325B91175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */; };
 		74325B92175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */; };
+		74325B9C17604FBA003E9561 /* wheelSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = 74325B9717604FBA003E9561 /* wheelSound.aif */; };
+		74325B9D17604FBA003E9561 /* BiWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B9917604FBA003E9561 /* BiWheelSchemeGroup.plist */; };
+		74325B9E17604FBA003E9561 /* MonoWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B9A17604FBA003E9561 /* MonoWheelSchemeGroup.plist */; };
+		74325B9F17604FBA003E9561 /* TriWheelSchemeGroup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74325B9B17604FBA003E9561 /* TriWheelSchemeGroup.plist */; };
+		74325BA517606724003E9561 /* navi_btn_icon_restore@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325BA417606724003E9561 /* navi_btn_icon_restore@2x~iphone.png */; };
+		74325BA717606828003E9561 /* navi_btn_icon_restore_disabled@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 74325BA617606827003E9561 /* navi_btn_icon_restore_disabled@2x~iphone.png */; };
 		7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80016E9F267003B2195 /* BiWheelController.xib */; };
 		7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7453F80216E9F278003B2195 /* TriWheelController.xib */; };
 		745FC35F16E6E2A500F61FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745FC35E16E6E2A500F61FED /* QuartzCore.framework */; };
 		745FC36516E6EC2A00F61FED /* UIImage+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36116E6EC2A00F61FED /* UIImage+z.m */; };
 		745FC36616E6EC2A00F61FED /* UIView+z.m in Sources */ = {isa = PBXBuildFile; fileRef = 745FC36416E6EC2A00F61FED /* UIView+z.m */; };
 		74645BBF1758B0A3000AABD4 /* DisplayTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74645BBE1758B0A3000AABD4 /* DisplayTimer.m */; };
-		7465956E16E9C02700592979 /* wheelSound.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7465956D16E9C02700592979 /* wheelSound.aif */; };
 		7465957016E9C11300592979 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7465956F16E9C11300592979 /* AudioToolbox.framework */; };
 		74C5BE6A175C76E7009B552C /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C5BE69175C76E7009B552C /* TitleView.m */; };
 		74C5BE6C175C7703009B552C /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C5BE6B175C7703009B552C /* TitleView.xib */; };
@@ -106,9 +108,6 @@
 		74325B50175DB660003E9561 /* table_cell_bk_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_center@2x.png"; sourceTree = "<group>"; };
 		74325B51175DB660003E9561 /* table_cell_bk_top_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_top_sel@2x.png"; sourceTree = "<group>"; };
 		74325B52175DB660003E9561 /* table_cell_bk_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "table_cell_bk_top@2x.png"; sourceTree = "<group>"; };
-		74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MonoWheelSchemeGroup.plist; sourceTree = "<group>"; };
-		74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BiWheelSchemeGroup.plist; sourceTree = "<group>"; };
-		74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriWheelSchemeGroup.plist; sourceTree = "<group>"; };
 		74325B62175DF536003E9561 /* SWSchemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSchemeManager.h; sourceTree = "<group>"; };
 		74325B63175DF537003E9561 /* SWSchemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSchemeManager.m; sourceTree = "<group>"; };
 		74325B65175EDA6A003E9561 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
@@ -126,6 +125,12 @@
 		74325B85175F1664003E9561 /* btn_icon_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_icon_add.png; sourceTree = "<group>"; };
 		74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_more_disabled@2x~iphone.png"; sourceTree = "<group>"; };
 		74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_more@2x~iphone.png"; sourceTree = "<group>"; };
+		74325B9717604FBA003E9561 /* wheelSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = wheelSound.aif; sourceTree = "<group>"; };
+		74325B9917604FBA003E9561 /* BiWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BiWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325B9A17604FBA003E9561 /* MonoWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MonoWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325B9B17604FBA003E9561 /* TriWheelSchemeGroup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TriWheelSchemeGroup.plist; sourceTree = "<group>"; };
+		74325BA417606724003E9561 /* navi_btn_icon_restore@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_restore@2x~iphone.png"; sourceTree = "<group>"; };
+		74325BA617606827003E9561 /* navi_btn_icon_restore_disabled@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_icon_restore_disabled@2x~iphone.png"; sourceTree = "<group>"; };
 		7453F80016E9F267003B2195 /* BiWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiWheelController.xib; sourceTree = "<group>"; };
 		7453F80216E9F278003B2195 /* TriWheelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TriWheelController.xib; sourceTree = "<group>"; };
 		745FC35E16E6E2A500F61FED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -136,7 +141,6 @@
 		745FC36416E6EC2A00F61FED /* UIView+z.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+z.m"; sourceTree = "<group>"; };
 		74645BBD1758B0A3000AABD4 /* DisplayTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayTimer.h; sourceTree = "<group>"; };
 		74645BBE1758B0A3000AABD4 /* DisplayTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayTimer.m; sourceTree = "<group>"; };
-		7465956D16E9C02700592979 /* wheelSound.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = wheelSound.aif; sourceTree = "<group>"; };
 		7465956F16E9C11300592979 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		74C5BE68175C76E7009B552C /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		74C5BE69175C76E7009B552C /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
@@ -243,6 +247,39 @@
 			name = Wheel;
 			sourceTree = "<group>";
 		};
+		74325B93176028B9003E9561 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				74C5BE87175D8CC7009B552C /* SWTableViewCell.h */,
+				74C5BE88175D8CC7009B552C /* SWTableViewCell.m */,
+				74325B7D175F0BF1003E9561 /* SchemeTableViewCell.h */,
+				74325B7E175F0BF3003E9561 /* SchemeTableViewCell.m */,
+				74C5BE8A175D8CDD009B552C /* SchemeTableViewCell.xib */,
+				74325B80175F0C16003E9561 /* WheelMenuTableViewCell.h */,
+				74325B81175F0C18003E9561 /* WheelMenuTableViewCell.m */,
+				74325B83175F12DC003E9561 /* WheelMenuTableViewCell.xib */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		74325B9617604FBA003E9561 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				74325B9717604FBA003E9561 /* wheelSound.aif */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		74325B9817604FBA003E9561 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				74325B9917604FBA003E9561 /* BiWheelSchemeGroup.plist */,
+				74325B9A17604FBA003E9561 /* MonoWheelSchemeGroup.plist */,
+				74325B9B17604FBA003E9561 /* TriWheelSchemeGroup.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
 		74DE8F03175C50D10029C3D0 /* base_arch */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +316,8 @@
 				74C5BE70175CAD2A009B552C /* 2wheel.png */,
 				74C5BE71175CAD2B009B552C /* 3wheel.png */,
 				74DE8F08175C6B7E0029C3D0 /* creamcolor_bk@2x.png */,
+				74325BA617606827003E9561 /* navi_btn_icon_restore_disabled@2x~iphone.png */,
+				74325BA417606724003E9561 /* navi_btn_icon_restore@2x~iphone.png */,
 				74325B8F175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png */,
 				74325B90175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png */,
 				74DE8F09175C6B7E0029C3D0 /* navi_btn_bk_down@2x~iphone.png */,
@@ -324,26 +363,19 @@
 		74E20C8017053C2200A78A09 /* tableVC */ = {
 			isa = PBXGroup;
 			children = (
-				74325B62175DF536003E9561 /* SWSchemeManager.h */,
-				74325B63175DF537003E9561 /* SWSchemeManager.m */,
-				74C5BE87175D8CC7009B552C /* SWTableViewCell.h */,
-				74C5BE88175D8CC7009B552C /* SWTableViewCell.m */,
-				74325B7D175F0BF1003E9561 /* SchemeTableViewCell.h */,
-				74325B7E175F0BF3003E9561 /* SchemeTableViewCell.m */,
-				74C5BE8A175D8CDD009B552C /* SchemeTableViewCell.xib */,
-				74325B80175F0C16003E9561 /* WheelMenuTableViewCell.h */,
-				74325B81175F0C18003E9561 /* WheelMenuTableViewCell.m */,
-				74325B83175F12DC003E9561 /* WheelMenuTableViewCell.xib */,
-				74325B6A175EE10E003E9561 /* SWTableViewController.h */,
-				74325B6B175EE110003E9561 /* SWTableViewController.m */,
-				74325B6C175EE112003E9561 /* SWTableViewController.xib */,
+				74325B93176028B9003E9561 /* cell */,
 				74325B65175EDA6A003E9561 /* HeaderView.h */,
 				74325B66175EDA6C003E9561 /* HeaderView.m */,
 				74325B68175EDAA6003E9561 /* HeaderView.xib */,
+				74325B6A175EE10E003E9561 /* SWTableViewController.h */,
+				74325B6B175EE110003E9561 /* SWTableViewController.m */,
+				74325B6C175EE112003E9561 /* SWTableViewController.xib */,
 				74C5BE7D175D8B83009B552C /* SchemeTableViewController.h */,
 				74C5BE7E175D8B83009B552C /* SchemeTableViewController.m */,
 				74C5BE82175D8C72009B552C /* WheelMenuTableViewController.h */,
 				74C5BE83175D8C72009B552C /* WheelMenuTableViewController.m */,
+				74325B62175DF536003E9561 /* SWSchemeManager.h */,
+				74325B63175DF537003E9561 /* SWSchemeManager.m */,
 			);
 			name = tableVC;
 			sourceTree = "<group>";
@@ -351,11 +383,9 @@
 		A659F2C316E78F3A0092E1BA /* res */ = {
 			isa = PBXGroup;
 			children = (
+				74325B9617604FBA003E9561 /* audio */,
+				74325B9817604FBA003E9561 /* plist */,
 				74DE8F07175C6B7E0029C3D0 /* image */,
-				7465956D16E9C02700592979 /* wheelSound.aif */,
-				74325B5C175DEAD5003E9561 /* MonoWheelSchemeGroup.plist */,
-				74325B5E175DEAEB003E9561 /* BiWheelSchemeGroup.plist */,
-				74325B60175DEAF7003E9561 /* TriWheelSchemeGroup.plist */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -509,7 +539,6 @@
 				A69D7F1816E62BEF00DD1DE3 /* Default.png in Resources */,
 				A69D7F1A16E62BEF00DD1DE3 /* Default@2x.png in Resources */,
 				A69D7F1C16E62BF000DD1DE3 /* Default-568h@2x.png in Resources */,
-				7465956E16E9C02700592979 /* wheelSound.aif in Resources */,
 				7453F80116E9F267003B2195 /* BiWheelController.xib in Resources */,
 				7453F80316E9F279003B2195 /* TriWheelController.xib in Resources */,
 				740D0C8E16F41D970027EE2B /* MonoWheelController.xib in Resources */,
@@ -543,9 +572,6 @@
 				74325B58175DB660003E9561 /* table_cell_bk_center@2x.png in Resources */,
 				74325B59175DB660003E9561 /* table_cell_bk_top_sel@2x.png in Resources */,
 				74325B5A175DB660003E9561 /* table_cell_bk_top@2x.png in Resources */,
-				74325B5D175DEAD5003E9561 /* MonoWheelSchemeGroup.plist in Resources */,
-				74325B5F175DEAEB003E9561 /* BiWheelSchemeGroup.plist in Resources */,
-				74325B61175DEAF8003E9561 /* TriWheelSchemeGroup.plist in Resources */,
 				74325B69175EDAA7003E9561 /* HeaderView.xib in Resources */,
 				74325B6E175EE113003E9561 /* SWTableViewController.xib in Resources */,
 				74325B7C175EFEF6003E9561 /* scheme_using_tick.png in Resources */,
@@ -553,6 +579,12 @@
 				74325B86175F1664003E9561 /* btn_icon_add.png in Resources */,
 				74325B91175F1A4D003E9561 /* navi_btn_icon_more_disabled@2x~iphone.png in Resources */,
 				74325B92175F1A4D003E9561 /* navi_btn_icon_more@2x~iphone.png in Resources */,
+				74325B9C17604FBA003E9561 /* wheelSound.aif in Resources */,
+				74325B9D17604FBA003E9561 /* BiWheelSchemeGroup.plist in Resources */,
+				74325B9E17604FBA003E9561 /* MonoWheelSchemeGroup.plist in Resources */,
+				74325B9F17604FBA003E9561 /* TriWheelSchemeGroup.plist in Resources */,
+				74325BA517606724003E9561 /* navi_btn_icon_restore@2x~iphone.png in Resources */,
+				74325BA717606828003E9561 /* navi_btn_icon_restore_disabled@2x~iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

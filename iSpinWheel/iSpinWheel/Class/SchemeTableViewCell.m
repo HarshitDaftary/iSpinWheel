@@ -20,23 +20,6 @@
     return self;
 }
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-}
-
-#pragma mark - UITextFieldDelegate -
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    self.arrowImageView.hidden=YES;
-    [super textFieldDidBeginEditing:textField];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    self.arrowImageView.hidden=NO;
-    [super textFieldDidEndEditing:textField];
-}
 
 -(void)setIsInUsing:(BOOL)isInUsing
 {
@@ -49,6 +32,12 @@
 
 }
 
+- (void)configureCellWithText:(NSString *)text placeType:(CellPlaceType)type
+{
+    self.label.text=text;
+    [super configureCellWithText:text placeType:type];
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

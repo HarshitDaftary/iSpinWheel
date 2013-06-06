@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 + (HeaderView*)headerView;
+@property (assign, nonatomic) IBOutlet UIButton *addButton;
 
 @end

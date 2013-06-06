@@ -96,6 +96,10 @@
             [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_more"] forState:UIControlStateNormal];
             [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_more_disabled"] forState:UIControlStateHighlighted];
             break;
+        case TitleButtonType_Restore:
+            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_restore"] forState:UIControlStateNormal];
+            [button setBackgroundImage:[UIImage imageNamed:@"navi_btn_icon_restore_disabled"] forState:UIControlStateHighlighted];
+            break;
         default:
             NSAssert(YES, @"error type.");
             break;

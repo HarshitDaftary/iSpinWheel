@@ -8,6 +8,13 @@
 
 #import "SWTableViewCell.h"
 
+@interface SWTextField : UITextField
+
+@property (nonatomic, strong) NSIndexPath *indexPath;
+@end
+
 @interface WheelMenuTableViewCell : SWTableViewCell
+
+@property (strong, nonatomic) IBOutlet SWTextField *textField;
 
 @end

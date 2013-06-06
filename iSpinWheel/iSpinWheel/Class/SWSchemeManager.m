@@ -18,7 +18,7 @@ static SWSchemeManager* triSchemeManager;
 }
 
 @property (strong, nonatomic) NSMutableDictionary *schemeDictionary;
-@property (strong, nonatomic) NSMutableArray *schemeNameList_v;
+@property (strong, nonatomic) NSArray *schemeNameList_v;
 @property (copy, nonatomic) NSString *schemeNameInUsing_v;
 @end
 
@@ -55,7 +55,7 @@ static SWSchemeManager* triSchemeManager;
     return self.schemeNameInUsing_v;
 }
 
-- (BOOL)setSchemeInUsing:(NSString*)schemeName
+- (BOOL)setSchemeNameInUsing:(NSString*)schemeName
 {
     if ([schemeName isEqualToString:self.schemeNameInUsing_v])
     {
@@ -117,20 +117,20 @@ static SWSchemeManager* triSchemeManager;
     {
         case SchemeGroupType_MonoWheel:
             wheelArray=[NSArray arrayWithObjects:
-                        [[NSMutableArray alloc] initWithCapacity:3],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
                         nil];
             break;
         case SchemeGroupType_BiWheel:
             wheelArray=[NSArray arrayWithObjects:
-                        [[NSMutableArray alloc] initWithCapacity:3],
-                        [[NSMutableArray alloc] initWithCapacity:3],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
                         nil];
             break;
         case SchemeGroupType_TriWheel:
             wheelArray=[NSArray arrayWithObjects:
-                        [[NSMutableArray alloc] initWithCapacity:3],
-                        [[NSMutableArray alloc] initWithCapacity:3],
-                        [[NSMutableArray alloc] initWithCapacity:3],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
+                        [[NSMutableArray alloc] initWithObjects:@"新选项",@"新选项 01", nil],
                         nil];
             break;
         default:
@@ -151,7 +151,7 @@ static SWSchemeManager* triSchemeManager;
     [self.schemeDictionary removeObjectForKey:schemeName];
     if ([schemeName isEqualToString:[self schemeNameInUsing]])
     {
-        [self setSchemeInUsing:nil];
+        [self setSchemeNameInUsing:nil];
     }
     [self loadSchemeNameList];
     return YES;
@@ -168,7 +168,7 @@ static SWSchemeManager* triSchemeManager;
     }
     [self.schemeDictionary setObject:obj forKey:newName];
     [self.schemeDictionary removeObjectForKey:schemeName];
-    [self setSchemeInUsing:newName];
+    [self setSchemeNameInUsing:newName];
     [self loadSchemeNameList];
     return YES;
 
@@ -176,7 +176,45 @@ static SWSchemeManager* triSchemeManager;
 
 - (BOOL)wheelStringAdded:(NSString *)newStr forWheel:(NSInteger)wheelIndex ofScheme:(NSString *)schemeName
 {
-    [[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex] addObject:newStr];
+    NSInteger maxSegment=0;
+    switch (_schemeGroupType) {
+        case SchemeGroupType_MonoWheel:
+            maxSegment=MonoWheelMaxSegment;
+            break;
+        case SchemeGroupType_BiWheel:
+            if (0==wheelIndex)
+            {
+                maxSegment=BiSmallWheelMaxSegment;
+            }
+            else
+            {
+                maxSegment=BiBigWheelMaxSegment;
+            }
+            break;
+        case SchemeGroupType_TriWheel:
+            if (0==wheelIndex)
+            {
+                maxSegment=TriSmallWheelMaxSegment;
+            }
+            else if (1==wheelIndex)
+            {
+                maxSegment=TriMediumWheelMaxSegment;
+            }
+            else
+            {
+                maxSegment=TriBigWheelMaxSegment;
+            }
+            break;
+            
+        default:
+            break;
+    }
+    NSMutableArray *strArray=[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex];
+    if ([strArray count]>=maxSegment)
+    {
+        return NO;
+    }
+    [strArray addObject:newStr];
     return YES;
     
 }
@@ -199,9 +237,16 @@ static SWSchemeManager* triSchemeManager;
     [self loadSchemeOfType:_schemeGroupType];
 }
 
-- (void)saveChanging
+- (void)commitChanging
 {
     [[NSUserDefaults standardUserDefaults] setObject:self.schemeDictionary forKey:[self schemeGroupNameOfType:_schemeGroupType]];
+}
+
+- (void)restoreToDefault
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:[self schemeGroupNameOfType:_schemeGroupType]];
+    [self loadSchemeFromPlistFileOfType:_schemeGroupType];
+    [self setSchemeNameInUsing:nil];
 }
 
 - (NSArray*)schemeNameList
@@ -234,7 +279,9 @@ static SWSchemeManager* triSchemeManager;
     {
         [nameList addObject:(NSString*)key];
     }
-    self.schemeNameList_v=nameList;
+    self.schemeNameList_v=[nameList sortedArrayUsingComparator:^(id obj1, id obj2) {
+        return [(NSString*)obj1 caseInsensitiveCompare:(NSString*)obj2];
+    }];
 }
 
 - (void)loadSchemeFromPlistFileOfType:(SchemeGroupType)type

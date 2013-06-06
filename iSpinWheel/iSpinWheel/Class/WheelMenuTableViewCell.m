@@ -8,6 +8,12 @@
 
 #import "WheelMenuTableViewCell.h"
 
+@implementation SWTextField
+@synthesize indexPath=_indexPath;
+
+
+@end
+
 @implementation WheelMenuTableViewCell
 
 - (id)initWithFrame:(CGRect)frame
@@ -19,6 +25,12 @@
     return self;
 }
 
+- (void)configureCellWithText:(NSString *)text placeType:(CellPlaceType)type
+{
+    self.textField.text=text;
+    [super configureCellWithText:text placeType:type];
+    
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

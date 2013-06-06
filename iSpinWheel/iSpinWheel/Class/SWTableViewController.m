@@ -11,7 +11,6 @@
 
 @interface SWTableViewController ()
 {
-    BOOL _isKeyBoardShowing;
 }
 
 @end
@@ -19,7 +18,6 @@
 @implementation SWTableViewController
 @synthesize tableView=_tableView;
 @synthesize schemeManager=_schemeManager;
-@synthesize isEditMode=_isEditMode;
 @synthesize schemeGroupType=_schemeGroupType;
 
 - (id)init
@@ -27,8 +25,7 @@
     self=[super initWithNibName:@"SWTableViewController" bundle:nil];
     if (self)
     {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
     }
     return self;
 }
@@ -49,10 +46,6 @@
 
 }
 
--(void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -106,6 +99,7 @@
     return view;
 }
 
+
 #pragma mark - UITableViewDataSource -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -122,10 +116,6 @@
 #pragma mark override
 - (void)hideTitleViewWithAnimation:(BOOL)animate
 {
-    if (_isKeyBoardShowing)
-    {
-        return;
-    }
     UIView *animateView=self.titleView;
     void (^preAction)(void)=^(void)
     {
@@ -162,10 +152,6 @@
 
 - (void)showTitleViewWithAnimation:(BOOL)animate
 {
-    if (_isKeyBoardShowing)
-    {
-        return;
-    }
     UIView *animateView=self.titleView;
     
     void (^preAction)(void)=^(void)
@@ -214,87 +200,6 @@
         }
     }
     
-}
-
-#pragma mark - SWTableViewCellDelegate -
-- (void)swtableviewcellDidBeginEditing:(SWTableViewCell *)cell
-{
-    SWLog(@"");
-    _isEditMode=YES;
-}
-
-- (void)swtableviewcellDidEndEditing:(SWTableViewCell *)cell
-{
-    SWLog(@"");
-}
-
-- (void)swtableviewcellBeSelected:(SWTableViewCell *)cell
-{
-    SWLog(@"");
-    if (_isEditMode)
-    {
-        
-    }
-    else
-    {
-
-    }
-}
-
-#pragma mark - keyboard -
-- (void)keyboardWillShow:(NSNotification *)notification
-{
-	CGRect endFrame = [[[notification userInfo] valueForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-	UIViewAnimationCurve animationCurve	= [[[notification userInfo] valueForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
-	NSTimeInterval animationDuration = [[[notification userInfo] valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
-    [UIView beginAnimations:@"showKeyboardAnimation" context:nil];
-    [UIView setAnimationCurve:animationCurve];
-    [UIView setAnimationDuration:animationDuration];
-    
-    CGRect frame=self.tableView.frame;
-    if (self.titleView.hidden)
-    {
-        frame.origin.y=20;
-    }
-    else
-    {
-        frame.origin.y=64;
-    }
-    frame.size.height=endFrame.origin.y-20-frame.origin.y;
-    self.tableView.frame=frame;
-    
-    [UIView commitAnimations];
-    
-    _isKeyBoardShowing=YES;
-
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification
-{
-    NSTimeInterval animationDuration = [[[notification userInfo] valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-	UIViewAnimationCurve animationCurve	= [[[notification userInfo] valueForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
-    
-    [UIView beginAnimations:@"hideKeyboardAnimation" context:nil];
-	[UIView setAnimationCurve:animationCurve];
-	[UIView setAnimationDuration:animationDuration];
-	
-    CGRect frame=self.tableView.frame;
-    if (self.titleView.hidden)
-    {
-        frame.origin.y=20;
-    }
-    else
-    {
-        frame.origin.y=64;
-    }
-    frame.size.height=[[UIScreen mainScreen] bounds].size.height-20-frame.origin.y;
-    self.tableView.frame=frame;
-	
-	[UIView commitAnimations];
-    
-    _isKeyBoardShowing=NO;
-
 }
 
 @end

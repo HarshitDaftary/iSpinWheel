@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define MonoWheelMaxSegment (30)
+
+#define BiSmallWheelMaxSegment (20)
+#define BiBigWheelMaxSegment (25)
+
+#define TriSmallWheelMaxSegment (8)
+#define TriMediumWheelMaxSegment (15)
+#define TriBigWheelMaxSegment (30)
+
+
 typedef enum
 {
     SchemeGroupType_MonoWheel,
@@ -24,7 +34,7 @@ typedef enum
 
 - (NSString*)schemeNameInUsing;
 
-- (BOOL)setSchemeInUsing:(NSString*)schemeName;
+- (BOOL)setSchemeNameInUsing:(NSString*)schemeName;
 
 - (BOOL)schemeAdded:(NSString*)schemeName;
 
@@ -40,7 +50,9 @@ typedef enum
 
 - (void)abandonChanging;
 
-- (void)saveChanging;
+- (void)commitChanging;
+
+- (void)restoreToDefault;
 
 - (NSArray*)schemeNameList;
 

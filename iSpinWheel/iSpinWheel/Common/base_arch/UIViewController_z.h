@@ -14,7 +14,8 @@ typedef enum
     TitleButtonType_Close,
     TitleButtonType_Edit,
     TitleButtonType_Text,
-    TitleButtonType_More
+    TitleButtonType_More,
+    TitleButtonType_Restore
 }TitleButtonType;
 
 @class TitleView;

@@ -13,16 +13,21 @@
 #import "HeaderView.h"
 #import "SchemeTableViewCell.h"
 
+#define UIAlertViewTagRestore (100)
+#define UIAlertViewTagDelete (101)
+
 @interface SchemeTableViewController ()
 {
 
 }
+@property (nonatomic, strong) NSString *schemeNameToDelete;
 
 @end
 
 @implementation SchemeTableViewController
 @synthesize tableView=_tableView;
 @synthesize schemeManager=_schemeManager;
+@synthesize schemeNameToDelete=_schemeNameToDelete;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,7 +59,7 @@
     self.titleView.title.text=@"我的方案";
     
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
-    [self setTitleButtonType:TitleButtonType_Edit forLeft:NO];
+    [self setTitleButtonType:TitleButtonType_Restore forLeft:NO];
     
 }
 
@@ -70,6 +75,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
 #pragma mark - User interaction -
 
 -(void)titleLeftButtonClick:(id)sender
@@ -79,7 +89,24 @@
 
 -(void)titleRightButtonClick:(id)sender
 {
+    UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:nil message:@"确定恢复默认方案？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"恢复", nil];
+    alertView.tag=UIAlertViewTagRestore;
+    [alertView show];
+}
+
+- (void)addButtonClick:(id)sender
+{
+    NSString *newName_base=@"新方案";
+    NSString *newName_attempt=newName_base;
+    NSInteger counter=1;
+    while (NSNotFound!=[[self.schemeManager schemeNameList] indexOfObject:newName_attempt])
+    {
+        newName_attempt=[newName_base stringByAppendingFormat:@" %02d",counter++];
+    }
+    [self.schemeManager schemeAdded:newName_attempt];
+    [self.schemeManager commitChanging];
     
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDelegate -
@@ -87,21 +114,39 @@
 {
     HeaderView *hView=[HeaderView headerView];
     hView.titleLabel.text=@"方案列表";
+    [hView.addButton addTarget:self action:@selector(addButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     return hView;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WheelMenuTableViewController *menuTVC=[[WheelMenuTableViewController alloc] initWithSchemeName:[[self.schemeManager schemeNameList] objectAtIndex:indexPath.row]  schemeGroupType:self.schemeGroupType];
+    [[SWNavigationController shareNavigationController] pushViewController:menuTVC animated:YES];
+}
+
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (UITableViewCellEditingStyleDelete==editingStyle)
+    {
+        self.schemeNameToDelete=[[self.schemeManager schemeNameList] objectAtIndex:indexPath.row];
+        NSString *message=[@"确定删除" stringByAppendingFormat:@"\"%@\"?",self.schemeNameToDelete];
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"删除", nil];
+        alertView.tag=UIAlertViewTagDelete;
+        [alertView show];
+    }
+    
 }
 
 #pragma mark - UITableViewDataSource -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning test code
-//    return [[self.schemeManager schemeNameList] count];
-    NSInteger count=[[self.schemeManager schemeNameList] count];
-    if (self.schemeGroupType==SchemeGroupType_MonoWheel)
-    {
-        count*=10;
-    }
-    return count;
+    return [[self.schemeManager schemeNameList] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,7 +156,6 @@
     if (nil==swcell)
     {
         swcell=(SchemeTableViewCell*)[SchemeTableViewCell tableViewCell];
-        swcell.swcellDelegate=self;
     }
     
     NSInteger row=indexPath.row;
@@ -137,38 +181,35 @@
         }
     }
     swcell.indexPath=indexPath;
-#warning test code
-//    NSString *text=[[self.schemeManager schemeNameList] objectAtIndex:row];
-    NSString *text=[[self.schemeManager schemeNameList] objectAtIndex:row%[[self.schemeManager schemeNameList] count]];
+    NSString *text=[[self.schemeManager schemeNameList] objectAtIndex:row];
     swcell.isInUsing=[text isEqualToString:[self.schemeManager schemeNameInUsing]];
     [swcell configureCellWithText:text placeType:type];
     
     return swcell;
 }
 
-#pragma mark - SWTableViewCellDelegate -
-- (void)swtableviewcellDidBeginEditing:(SWTableViewCell *)cell
+#pragma mark - UIAlertViewDelegate -
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    [super swtableviewcellDidBeginEditing:cell];
-}
-
-- (void)swtableviewcellDidEndEditing:(SWTableViewCell *)cell
-{
-    [super swtableviewcellDidEndEditing:cell];
-}
-
-- (void)swtableviewcellBeSelected:(SWTableViewCell *)cell
-{
-    SWLog(@"");
-    if (self.isEditMode)
+    if (UIAlertViewTagRestore==alertView.tag)
     {
-        
+        if (1==buttonIndex)
+        {
+            [self.schemeManager restoreToDefault];
+            [self.tableView reloadData];
+        }
     }
-    else
+    else if (UIAlertViewTagDelete==alertView.tag)
     {
-        WheelMenuTableViewController *menuTVC=[[WheelMenuTableViewController alloc] initWithSchemeName:[[self.schemeManager schemeNameList] objectAtIndex:cell.indexPath.row]  schemeGroupType:self.schemeGroupType];
-        [[SWNavigationController shareNavigationController] pushViewController:menuTVC animated:YES];
-
+        if (1==buttonIndex)
+        {
+            if ([self.schemeManager schemeDeleted:self.schemeNameToDelete])
+            {
+                [self.schemeManager commitChanging];
+            }
+            [self.tableView reloadData];
+        }
+        self.schemeNameToDelete=nil;
     }
 }
 

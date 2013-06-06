@@ -9,6 +9,7 @@
 #import "HeaderView.h"
 
 @implementation HeaderView
+@synthesize addButton=_addButton;
 
 - (id)initWithFrame:(CGRect)frame
 {

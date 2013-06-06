@@ -9,7 +9,7 @@
 #import "SWTableViewController.h"
 #import "SWSchemeManager.h"
 
-@interface WheelMenuTableViewController : SWTableViewController
+@interface WheelMenuTableViewController : SWTableViewController<UITextFieldDelegate,UIAlertViewDelegate>
 
 -(id)initWithSchemeName:(NSString*)schemeName schemeGroupType:(SchemeGroupType)type;
 

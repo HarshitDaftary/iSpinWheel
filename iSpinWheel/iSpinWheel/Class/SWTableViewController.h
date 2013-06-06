@@ -7,18 +7,16 @@
 //
 
 #import "UIViewController_z.h"
-#import "SWTableViewCell.h"
 #import "SWSchemeManager.h"
 
 #define CellHeight (44)
 #define HeaderHeight (30)
 #define FooterHeight (22)
 
-@interface SWTableViewController : UIViewController_z<UITableViewDataSource,UITableViewDelegate,SWTableViewCellDelegate>
+@interface SWTableViewController : UIViewController_z<UITableViewDataSource,UITableViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) SWSchemeManager *schemeManager;
-@property (assign, nonatomic) BOOL isEditMode;
 @property (assign, nonatomic) SchemeGroupType schemeGroupType;
 
 @end

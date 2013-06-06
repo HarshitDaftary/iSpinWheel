@@ -9,7 +9,7 @@
 #import "SWTableViewController.h"
 #import "SWSchemeManager.h"
 
-@interface SchemeTableViewController : SWTableViewController
+@interface SchemeTableViewController : SWTableViewController <UIAlertViewDelegate>
 
 - (id)initWithSchemeGroupType:(SchemeGroupType)type;
 

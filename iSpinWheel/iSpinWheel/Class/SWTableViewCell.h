@@ -18,29 +18,14 @@ typedef enum
     CellPlaceType_Bottom
 }CellPlaceType;
 
-@class SWTableViewCell;
-@protocol SWTableViewCellDelegate <NSObject>
-
-@required
-- (void)swtableviewcellDidBeginEditing:(SWTableViewCell*)cell;
-
-- (void)swtableviewcellDidEndEditing:(SWTableViewCell*)cell;
-
--(void)swtableviewcellBeSelected:(SWTableViewCell*)cell;
-
-@end
 //自定义背景，滑动删除，双击or长按重命名，header添加，uitextfield。
-@interface SWTableViewCell : UITableViewCell<UITextFieldDelegate>
+@interface SWTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (strong, nonatomic) IBOutlet UITextField *textField;
-@property (strong, nonatomic) IBOutlet UIView *coverView;
+@property (assign, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (strong, nonatomic) NSIndexPath *indexPath;
-@property (assign, nonatomic) id<SWTableViewCellDelegate> swcellDelegate;
 
 + (id)tableViewCell;
 
 - (void)configureCellWithText:(NSString*)text placeType:(CellPlaceType)type;
-
 
 @end
