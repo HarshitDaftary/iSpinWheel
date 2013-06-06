@@ -99,7 +99,7 @@
         }
         else
         {
-            if (![self.schemeName isEqualToString:newName]&&[self.schemeManager schemeRenameFrom:self.schemeName to:newName])
+            if ([self.schemeManager schemeRenameFrom:self.schemeName to:newName])
             {
                 [self.schemeManager commitChanging];
                 self.schemeName=newName;

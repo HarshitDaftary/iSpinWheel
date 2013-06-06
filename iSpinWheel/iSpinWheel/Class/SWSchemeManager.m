@@ -160,6 +160,10 @@ static SWSchemeManager* triSchemeManager;
 
 - (BOOL)schemeRenameFrom:(NSString*)schemeName to:(NSString*)newName
 {
+    if ([schemeName isEqualToString:newName])
+    {
+        return NO;
+    }
     id obj=[self.schemeDictionary objectForKey:schemeName];
     
     if (nil==obj)
