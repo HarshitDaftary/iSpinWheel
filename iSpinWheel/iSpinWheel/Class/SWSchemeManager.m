@@ -232,7 +232,12 @@ static SWSchemeManager* triSchemeManager;
 
 - (BOOL)wheelStringDeletedAtIndex:(NSInteger)strIndex forWheel:(NSInteger)wheelIndex ofScheme:(NSString*)schemeName
 {
-    [[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex] removeObjectAtIndex:strIndex];
+    NSMutableArray *strList=[[self wheelArrayOfScheme:schemeName] objectAtIndex:wheelIndex];
+    if (2>=[strList count])
+    {
+        return NO;
+    }
+    [strList removeObjectAtIndex:strIndex];
     return YES;
 }
 

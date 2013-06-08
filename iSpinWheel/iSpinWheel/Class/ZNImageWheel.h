@@ -31,10 +31,10 @@
 @property (nonatomic, assign) BOOL isEditMode;
 @property (nonatomic, assign) id<SpinWheelDelegate> delegate;
 
-- (void)initialize;
 - (void)setImage:(UIImage *)anImage;
-- (void)setColorImageWithSegmentNumber:(NSInteger) seg segmentColorArray:(NSArray*)array;
 - (UIImage *)image;
+- (void)setSegmentsWithTextList:(NSArray*)textList;
+- (void)setSegmentsWithTextList:(NSArray*)textList withColorArray:(NSArray*)colorArray;
 
 - (id)initWithFrame:(CGRect)frame image:(UIImage *)anImage;
 - (void)startEditAnimationWithDelay:(NSTimeInterval)delay;

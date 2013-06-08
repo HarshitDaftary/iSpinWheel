@@ -7,8 +7,8 @@
 //
 
 #import "SWColorImageProductor.h"
-#import "SWColor.h"
 
+#define colorCount (30)
 
 @implementation SWColorImageProductor
 
@@ -25,21 +25,63 @@
     }
     if (nil==array||seg>[array count])
     {
-        array=colorArray;
+        NSInteger index=rand()%colorCount;
+        NSInteger step=rand()%4+1;
+        NSMutableArray *colorIndexList=[[NSMutableArray alloc] initWithCapacity:seg];
+        for (int i=0;i<seg;i++)
+        {
+            [colorIndexList addObject:[NSNumber numberWithInteger:index]];
+            index=(index+step)%colorCount;
+        }
+        array=colorIndexList;
     }
     CGFloat singleRadi=M_PI_Double/seg;
     CGFloat halfWidth=size.width/2;
-    int rd=random()%seg+8;
-    NSInteger colorIndex=0;
     UIGraphicsBeginImageContext(size);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     for (NSUInteger i=0;i<seg;i++)
     {
         CGContextBeginPath(ctx);
         CGContextMoveToPoint(ctx, halfWidth, halfWidth);
-        colorIndex=(i+1)*rd%colorCount;
-        CGContextSetFillColorWithColor(ctx, [[UIColor colorWithString: [array objectAtIndex:colorIndex]] CGColor]);
-//        CGContextSetFillColor(ctx, CGColorGetComponents( [[UIColor colorWithString: [array objectAtIndex:i] ] CGColor]));
+        UIColor *color=[UIColor colorWithPatternImage:[UIImage imageNamed:[@"color_" stringByAppendingFormat:@"%d",[[array objectAtIndex:i] integerValue]]]];
+        CGContextSetFillColorWithColor(ctx, [color CGColor]);
+        CGContextAddArc(ctx, halfWidth,halfWidth, size.height/2,  (i-0.5)*singleRadi, (i+0.5)*singleRadi, 0);
+        CGContextFillPath(ctx);
+    }
+    UIImage* image=UIGraphicsGetImageFromCurrentImageContext();
+    CGContextRelease(ctx);
+    return image;
+    
+}
+
++ (UIImage*)imageWithSize:(CGSize)size segmentNumber:(NSUInteger)seg
+{
+    if (CGSizeEqualToSize(size, CGSizeZero))
+    {
+        size.width=300;
+        size.height=300;
+    }
+    if (0==seg)
+    {
+        seg=5;
+    }
+
+    CGFloat singleRadi=M_PI_Double/seg;
+    CGFloat halfWidth=size.width/2;
+    NSInteger index=rand()%colorCount;
+    NSInteger step=rand()%4+1;
+    
+//    NSInteger index=0;
+//    NSInteger step=1;
+    
+    UIGraphicsBeginImageContext(size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    for (NSUInteger i=0;i<seg;i++,index=(index+step)%colorCount)
+    {
+        CGContextBeginPath(ctx);
+        CGContextMoveToPoint(ctx, halfWidth, halfWidth);
+        UIColor *color=[UIColor colorWithPatternImage:[UIImage imageNamed:[@"light_color_" stringByAppendingFormat:@"%d",index]]];
+        CGContextSetFillColorWithColor(ctx, [color CGColor]);
         CGContextAddArc(ctx, halfWidth,halfWidth, size.height/2,  (i-0.5)*singleRadi, (i+0.5)*singleRadi, 0);
         CGContextFillPath(ctx);
     }

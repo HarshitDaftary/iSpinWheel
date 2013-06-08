@@ -11,7 +11,8 @@
 
 @interface SWColorImageProductor : NSObject
 
-+ (UIImage*)imageWithSize:(CGSize)size segmentNumber:(NSUInteger)seg segmentColorArray:(NSArray *)array;
++ (UIImage*)imageWithSize:(CGSize)size segmentNumber:(NSUInteger)seg;
+//+ (UIImage*)imageWithSize:(CGSize)size segmentNumber:(NSUInteger)seg segmentColorArray:(NSArray *)array;
 + (UIImage*)defaultImage;
 
 @end

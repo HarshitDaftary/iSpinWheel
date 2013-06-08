@@ -31,38 +31,22 @@
 @synthesize tagGusture=_tagGusture;
 @synthesize editModeCoverView=_editModeCoverView;
 
-- (void)setImage:(UIImage *)anImage
+- (id)initWithFrame:(CGRect)frame
 {
-    [imageView setImage:anImage];
-}
-
-- (void)setColorImageWithSegmentNumber:(NSInteger) seg segmentColorArray:(NSArray*)array
-{
-    _segmentNumber=seg;
-    _segmentAngle=M_PI_Double/seg;
-    UIImage* image=[SWColorImageProductor imageWithSize:self.bounds.size segmentNumber:seg segmentColorArray:nil];
-    [self setImage:image];
-    
-    _pointerAngle=-_segmentAngle/2;
-    
-    [self addTextLabels];
-}
-
-- (UIImage *)image
-{
-    return [imageView image];
-}
-
-- (void)willMoveToSuperview:(UIView *)newSuperview
-{
-    if (nil==newSuperview)
+    if ((self = [super initWithFrame:frame]))
     {
-        AudioServicesDisposeSystemSoundID(_wheelSoundId);
+        [self _initialize_wheel];
     }
-
+    return self;
 }
 
-- (void)initialize
+-(void)awakeFromNib
+{
+    [self _initialize_wheel];
+    
+}
+
+- (void)_initialize_wheel
 {
     [self setTag:100];
     [self clipToCircus];
@@ -97,67 +81,190 @@
     }
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (void)setImage:(UIImage *)anImage
 {
-    if ((self = [super initWithFrame:frame]))
+    [imageView setImage:anImage];
+}
+
+- (void)setSegmentsWithTextList:(NSArray*)textList
+{
+    [self setSegmentsWithTextList:textList withColorArray:nil];
+}
+
+- (void)setSegmentsWithTextList:(NSArray*)textList withColorArray:(NSArray*)colorArray
+{
+    NSAssert(!(nil!=colorArray&&[textList count]!=[colorArray count]), @"text list count is not equal to color list count.");
+    _segmentNumber=[textList count];
+    _segmentAngle=M_PI_Double/_segmentNumber;
+    SWLog(@"begin-1");
+    UIImage* image=[SWColorImageProductor imageWithSize:self.bounds.size segmentNumber:_segmentNumber];
+    SWLog(@"end-1");
+    [self setImage:image];
+    
+    _pointerAngle=-_segmentAngle/2;
+    
+    
+    SWLog(@"begin-2");
+    [self addTextLabels:textList];
+    SWLog(@"end-2");
+    
+}
+
+- (UIImage *)image
+{
+    return [imageView image];
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview
+{
+    if (nil==newSuperview)
     {
-        [self setTag:100];
-        [self clipToCircus];
-        
-        imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        imageView.tag=200;
-        [imageView setContentMode:UIViewContentModeScaleAspectFill];
-        [self addSubview:imageView];
-        
-        _buttonDiameter=frame.size.width/3;
-        UIButton* button=[UIButton buttonWithType:UIButtonTypeCustom];
-        [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        button.backgroundColor=[UIColor colorWithString:@"000 191 057"];
-        [button setTitle:@"X" forState:UIControlStateNormal];
-        button.frame=CGRectMake(_buttonDiameter,_buttonDiameter,_buttonDiameter,_buttonDiameter);
-        [button clipToCircus];
-        [self addSubview:button];
-        
-        UILongPressGestureRecognizer* longPressGest=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressGesture:)];
-        longPressGest.cancelsTouchesInView=NO;
-        longPressGest.minimumPressDuration=0.05;
-        [self addGestureRecognizer:longPressGest];
-        
-        NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"wheelSound"
-                                                              ofType:@"aif"];
-        NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
-        OSStatus err = AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL,
-                                                            &_wheelSoundId);
-        if (err != kAudioServicesNoError)
-        {
-            SWLog(@"Could not load %@, error code: %ld", soundURL, err);
-        }
+        AudioServicesDisposeSystemSoundID(_wheelSoundId);
     }
-    return self;
+
+}
+
+- (CGFloat)fontSizeFitToLabelSize:(CGSize)labelSize
+{
+    CGFloat minFont=0.1;
+    CGFloat maxFont=25;
+    const CGFloat accuracyError=0.05;
+    CGFloat font;
+    CGSize calcSize;
+    const CGFloat widthThreshold=labelSize.width*accuracyError;
+    const CGFloat heightThreshold=labelSize.height*accuracyError;
+    while (maxFont>=minFont)
+    {
+        font=(minFont+maxFont)/2.0;
+        calcSize=[@"123456789" sizeWithFont:[UIFont systemFontOfSize:font] constrainedToSize:CGSizeMake(MAXFLOAT, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping];
+        CGFloat widthDelta=calcSize.width-labelSize.width;
+        CGFloat heightDelta=calcSize.height-labelSize.height;
+        if (widthDelta>0)
+        {
+            if (heightDelta>0)
+            {
+                if (widthDelta<=widthThreshold&&heightDelta<=heightThreshold)
+                {
+                    break;
+                }
+                else
+                {
+                    maxFont=font;
+                }
+            }
+            else
+            {
+                if (widthDelta<=widthThreshold)
+                {
+                    break;
+                }
+                else
+                {
+                    maxFont=font;
+                }
+                
+            }
+        }
+        else
+        {
+            if (heightDelta>0)
+            {
+                if (heightDelta<=heightThreshold)
+                {
+                    break;
+                }
+                else
+                {
+                    maxFont=font;
+                }
+                
+            }
+            else
+            {
+                if (-heightDelta<=heightThreshold||-widthDelta<=widthThreshold)
+                {
+                    break;
+                }
+                else
+                {
+                    minFont=font;
+                }
+            }
+        }
+
+    }
+    return font;
+ 
 }
 
 
-- (void)addTextLabels
+- (CGFloat)fontSizeFitToWidth:(CGFloat)width
+{
+    CGFloat minFont=5;
+    CGFloat maxFont=25;
+    CGFloat accuracy=0.95;
+    CGFloat font,calcWidth;
+    const CGFloat threshold=width*(1-accuracy);
+    while (maxFont>=minFont)
+    {
+        font=(minFont+maxFont)/2.0;
+        calcWidth=[@"0123456789" sizeWithFont:[UIFont systemFontOfSize:font] constrainedToSize:CGSizeMake(MAXFLOAT, MAXFLOAT) lineBreakMode:NSLineBreakByWordWrapping].width;
+        CGFloat delta=calcWidth-width;
+        if (delta>0)
+        {
+            if (delta<=threshold)
+            {
+                break;
+            }
+            maxFont=font;
+        }
+        else
+        {
+            if (-delta<=threshold)
+            {
+                break;
+            }
+            minFont=font;
+        }
+    }
+    return font;
+
+}
+
+- (void)addTextLabels:(NSArray*)textList
 {
     CGFloat r=self.bounds.size.width/2;
     CGPoint center=CGPointMake(r, r);
+    const CGFloat labelWidth=0.6*r;
+    const CGFloat labelHeight=r*tanf((_segmentNumber<=2?M_PI_2:_segmentAngle)/2);
+    CGFloat fontSize=[self fontSizeFitToLabelSize:CGSizeMake(labelWidth, labelHeight)];
     UILabel *label=nil;
+    for (UIView *subView in imageView.subviews)
+    {
+        if ([subView isKindOfClass:[UILabel class]])
+        {
+            [subView removeFromSuperview];
+        }
+    }
     for (int i =0;i<_segmentNumber;i++)
     {
 
-        label=[[UILabel alloc] initWithFrame:
-        CGRectMake(
-                   center.x+r/3+2*r*(cosf(i*_segmentAngle)-1)/3,
-                   center.y-r*tanf(_segmentAngle/2)/3+2*r*sinf(i*_segmentAngle)/3,
-                   2*r/3,
-                   2*r*tanf(_segmentAngle/2)/3
-                )];
+        label=[[UILabel alloc] initWithFrame:CGRectMake(0,0,labelWidth,labelHeight)];
+        label.center=
+            CGPointMake(
+            center.x+(r-labelWidth/2)*cosf(i*_segmentAngle),
+            center.y+(r-labelWidth/2)*sinf(i*_segmentAngle)
+            );
+
         label.tag=i;
         label.transform=CGAffineTransformMakeRotation(i*_segmentAngle);
         label.backgroundColor=[UIColor clearColor];
-        label.text=[NSString stringWithFormat:@"%d-%d-%d",i,i,i];
-        label.textColor=[UIColor whiteColor];
-        label.textAlignment=UITextAlignmentRight;
+        label.text=[textList objectAtIndex:i];
+        label.textColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
+        label.textAlignment=UITextAlignmentCenter;
+        label.lineBreakMode=UILineBreakModeMiddleTruncation;
+        label.font=[UIFont systemFontOfSize:fontSize];
+        label.clipsToBounds=NO;
         [imageView addSubview:label];
     }
     

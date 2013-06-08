@@ -8,6 +8,7 @@
 
 #import "SWAppDelegate.h"
 #import "MainViewController.h"
+#import "SWColorImageProductor.h"
 
 @implementation SWAppDelegate
 @synthesize navigationController=_navigationController;
@@ -25,6 +26,12 @@
     _navigationController.navigationBarHidden=YES;
     //self.window.rootViewController=aViewController;
     self.window.rootViewController=_navigationController;
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:5];
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:10];
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:15];
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:20];
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:25];
+    [SWColorImageProductor imageWithSize:CGSizeMake(300, 300) segmentNumber:30];
     return YES;
 }
 

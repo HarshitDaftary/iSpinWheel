@@ -173,7 +173,7 @@
     }
     else
     {
-        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:nil message:@"该转盘选项数目已达上限" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"选项添加失败" message:@"该转盘选项数目已达上限" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
         [alertView show];
     }
 }
@@ -274,8 +274,14 @@
         if ([self.schemeManager wheelStringDeletedAtIndex:indexPath.row forWheel:indexPath.section-1 ofScheme:self.schemeName])
         {
             [self.schemeManager commitChanging];
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
         }
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        else
+        {
+            UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"选项删除失败" message:@"转盘至少要有2个选项" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+            [alertView show];
+ 
+        }
     }
  
 }

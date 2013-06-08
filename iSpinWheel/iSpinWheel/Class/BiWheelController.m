@@ -19,6 +19,8 @@
 @property (nonatomic, strong)    IBOutlet UILabel *label0;
 @property (nonatomic, strong)    IBOutlet UILabel *label1;
 
+@property (nonatomic, assign)   SWSchemeManager *schemeManager;
+
 @end
 
 @implementation BiWheelController
@@ -26,12 +28,31 @@
 @synthesize imageWheel1=_imageWheel1;
 @synthesize label0=_label0;
 @synthesize label1=_label1;
+@synthesize schemeManager=_schemeManager;
+
+- (void)_init_WheelController
+{
+    self.schemeManager=[SWSchemeManager shareInstanceOfSchemeType:SchemeGroupType_BiWheel];
+    [self.schemeManager addObserver:self forKeyPath:@"schemeNameInUsing_v" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (id)init
+{
+    self=[super init];
+    if (self)
+    {
+        [self _init_WheelController];
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
+        [self _init_WheelController];
     }
     return self;
 }
@@ -45,18 +66,26 @@
     [self setTitleButtonType:TitleButtonType_Back forLeft:YES];
     [self setTitleButtonType:TitleButtonType_More forLeft:NO];
     
-    [_imageWheel0 initialize];
-    [_imageWheel0 setColorImageWithSegmentNumber:20 segmentColorArray:nil];
+    NSString *usingName=[self.schemeManager schemeNameInUsing];
+    NSArray *textList=[[self.schemeManager wheelArrayOfScheme:usingName] objectAtIndex:0];
+    [_imageWheel0 setSegmentsWithTextList:textList];
     [_imageWheel0 setDrag:0.4];
     [_imageWheel0 setMaxVelocity:50];
     _imageWheel0.delegate=self;
     
-    [_imageWheel1 initialize];
-    [_imageWheel1 setColorImageWithSegmentNumber:10 segmentColorArray:nil];
+    textList=[[self.schemeManager wheelArrayOfScheme:usingName] objectAtIndex:1];
+    [_imageWheel1 setSegmentsWithTextList:textList];
     [_imageWheel1 setDrag:0.4];
     [_imageWheel1 setMaxVelocity:50];
     _imageWheel1.delegate=self;
 }
+
+
+- (void)dealloc
+{
+    [self.schemeManager removeObserver:self forKeyPath:@"schemeNameInUsing_v"];
+}
+
 
 -(void)titleLeftButtonClick:(id)sender
 {
@@ -112,4 +141,16 @@
     [[DisplayTimer defaultDisplayTimer] removeDisplayObserver:_imageWheel1];
     [super viewWillDisappear:animated];
 }
+
+#pragma mark - KVO -
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([object isEqual:self.schemeManager])
+    {
+        if ([keyPath isEqualToString:@"schemeNameInUsing_v"])
+        {
+        }
+    }
+}
+
 @end
