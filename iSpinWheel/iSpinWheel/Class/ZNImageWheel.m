@@ -252,12 +252,12 @@
         label=[[UILabel alloc] initWithFrame:CGRectMake(0,0,labelWidth,labelHeight)];
         label.center=
             CGPointMake(
-            center.x+(r-labelWidth/2)*cosf(i*_segmentAngle),
-            center.y+(r-labelWidth/2)*sinf(i*_segmentAngle)
+            center.x+(r-labelWidth/2)*cosf((i+0.5)*_segmentAngle-M_PI_2),
+            center.y+(r-labelWidth/2)*sinf((i+0.5)*_segmentAngle-M_PI_2)
             );
 
         label.tag=i;
-        label.transform=CGAffineTransformMakeRotation(i*_segmentAngle);
+        label.transform=CGAffineTransformMakeRotation((i+0.5)*_segmentAngle-M_PI_2);
         label.backgroundColor=[UIColor clearColor];
         label.text=[textList objectAtIndex:i];
         label.textColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];

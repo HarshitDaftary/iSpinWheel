@@ -56,6 +56,18 @@
 
 + (UIImage*)imageWithSize:(CGSize)size segmentNumber:(NSUInteger)seg
 {
+    NSInteger test=rand()%2;
+    NSString *imageName=[NSString stringWithFormat:@"seg_%d",seg];
+    if (0==test)
+    {
+        imageName=[imageName stringByAppendingString:@"_fir_opt"];
+    }
+    else
+    {
+        imageName=[imageName stringByAppendingString:@"_sec_opt"];
+        
+    }
+    return [UIImage imageNamed:imageName];
     if (CGSizeEqualToSize(size, CGSizeZero))
     {
         size.width=300;

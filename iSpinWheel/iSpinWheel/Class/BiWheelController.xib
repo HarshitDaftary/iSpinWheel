@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">11E53</string>
+		<string key="IBDocument.SystemVersion">11G63</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -63,7 +63,7 @@
 					<object class="IBUILabel" id="454421420">
 						<reference key="NSNextResponder" ref="563612"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{171, 55}, {66, 21}}</string>
+						<string key="NSFrame">{{0, 45}, {150, 21}}</string>
 						<reference key="NSSuperview" ref="563612"/>
 						<reference key="NSNextKeyView" ref="733905957"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -95,7 +95,7 @@
 					<object class="IBUILabel" id="1042591352">
 						<reference key="NSNextResponder" ref="563612"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{234, 97}, {66, 21}}</string>
+						<string key="NSFrame">{{163, 45}, {157, 21}}</string>
 						<reference key="NSSuperview" ref="563612"/>
 						<reference key="NSNextKeyView" ref="218323650"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -199,10 +199,10 @@
 						<int key="objectID">18</int>
 						<reference key="object" ref="563612"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="454421420"/>
-							<reference ref="1042591352"/>
 							<reference ref="733905957"/>
 							<reference ref="218323650"/>
+							<reference ref="454421420"/>
+							<reference ref="1042591352"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
