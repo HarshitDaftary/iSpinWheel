@@ -64,7 +64,8 @@
     }
     else
     {
-        imageName=[imageName stringByAppendingString:@"_sec_opt"];
+        imageName=[imageName stringByAppendingString:@"_fir_opt"];
+//        imageName=[imageName stringByAppendingString:@"_sec_opt"];
         
     }
     return [UIImage imageNamed:imageName];

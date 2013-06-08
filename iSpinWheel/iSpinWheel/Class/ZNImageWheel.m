@@ -101,7 +101,8 @@
     SWLog(@"end-1");
     [self setImage:image];
     
-    _pointerAngle=-_segmentAngle/2;
+//    _pointerAngle=-_segmentAngle/2;
+    _pointerAngle=0;
     
     
     SWLog(@"begin-2");
@@ -252,12 +253,12 @@
         label=[[UILabel alloc] initWithFrame:CGRectMake(0,0,labelWidth,labelHeight)];
         label.center=
             CGPointMake(
-            center.x+(r-labelWidth/2)*cosf((i+0.5)*_segmentAngle-M_PI_2),
-            center.y+(r-labelWidth/2)*sinf((i+0.5)*_segmentAngle-M_PI_2)
+            center.x+(r-labelWidth/2)*cosf((i+0.5)*_segmentAngle),
+            center.y+(r-labelWidth/2)*sinf((i+0.5)*_segmentAngle)
             );
 
         label.tag=i;
-        label.transform=CGAffineTransformMakeRotation((i+0.5)*_segmentAngle-M_PI_2);
+        label.transform=CGAffineTransformMakeRotation((i+0.5)*_segmentAngle);
         label.backgroundColor=[UIColor clearColor];
         label.text=[textList objectAtIndex:i];
         label.textColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1.0];
@@ -324,8 +325,13 @@
 
 - (NSInteger)getSegmentIndexOfAngle:(CGFloat)ang
 {
-    NSInteger index=floorf((ang-_pointerAngle)/_segmentAngle);
-    return (_segmentNumber-((index%_segmentNumber)+_segmentNumber)%_segmentNumber)%_segmentNumber;
+//    NSInteger index=floorf((ang-_pointerAngle)/_segmentAngle);
+//    return (_segmentNumber-((index%_segmentNumber)+_segmentNumber)%_segmentNumber)%_segmentNumber;
+    while (ang<0)
+    {
+        ang+=M_PI*2;
+    }
+    return _segmentNumber-(ang-_pointerAngle)/_segmentAngle;
     
 }
 
